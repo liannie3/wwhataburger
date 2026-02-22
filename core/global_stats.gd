@@ -14,7 +14,7 @@ var p1_evidence: int = 0
 var p2_evidence: int = 0
 var is_game_over: bool = false
 var playthrough_count: int = 0
-var evidence_threshold: int = 2
+var evidence_threshold: int = 5
 
 func add_evidence(player_id: int, amount: int) -> void:
 	if is_game_over: return
