@@ -1,10 +1,31 @@
-[gd_scene format=3 uid="uid://masgguh4jref"]
+[gd_scene format=3 uid="uid://bxfumbre853g0"]
 
-[ext_resource type="Script" uid="uid://btyjk4pnj7pyg" path="res://main_game/player.gd" id="1_hqf23"]
+[ext_resource type="Script" path="res://main_game/player.gd" id="1_hqf23"]
+[ext_resource type="Texture2D" uid="uid://dyxoe3gjn71x1" path="res://sprites/player/AlienIdle1.PNG" id="2_r21c5"]
+[ext_resource type="Texture2D" uid="uid://kf71oh523g47" path="res://sprites/player/AlienIdle2.PNG" id="3_o5nb7"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ng460"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_r21c5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_o5nb7")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8hmdd"]
 
 [node name="Player" type="CharacterBody2D" unique_id=520688584]
 script = ExtResource("1_hqf23")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1565191249]
+sprite_frames = SubResource("SpriteFrames_ng460")
+animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=291617828]
+shape = SubResource("RectangleShape2D_8hmdd")
