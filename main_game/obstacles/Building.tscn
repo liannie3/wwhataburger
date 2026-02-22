@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bjqtqcal65xl0" path="res://assets/fountain2.PNG" id="2_d3bf0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kvidj"]
-size = Vector2(227, 266)
+size = Vector2(203, 156)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_71cv4"]
 animations = [{
@@ -23,7 +23,7 @@ animations = [{
 [node name="Building" type="StaticBody2D" unique_id=204772846]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=202534680]
-position = Vector2(-0.5, -4)
+position = Vector2(1.5, -44)
 shape = SubResource("RectangleShape2D_kvidj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=482328129]

@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://bmd4cdc5newjr"]
+
+[ext_resource type="Texture2D" uid="uid://eqvdvp6ll268" path="res://assets/Dog1.PNG" id="1_61cko"]
+[ext_resource type="Texture2D" uid="uid://c72k0262pnpeh" path="res://assets/Dog2.PNG" id="2_0agm2"]
+[ext_resource type="Texture2D" uid="uid://jrr0b60p8kuv" path="res://assets/Dog3.PNG" id="3_u5xwl"]
+[ext_resource type="Texture2D" uid="uid://b66rkw4vb3twv" path="res://assets/Dog4.PNG" id="4_6eodc"]
+[ext_resource type="Texture2D" uid="uid://ctdwuiewty3jf" path="res://assets/Dog5.PNG" id="5_4dpq1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v8ar8"]
+size = Vector2(322, 265)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4om3r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_61cko")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_0agm2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_u5xwl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_6eodc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_4dpq1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_6eodc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_u5xwl")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 15.0
+}]
+
+[node name="Cafe" type="StaticBody2D" unique_id=810779703]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=661171386]
+position = Vector2(10, -43.5)
+shape = SubResource("RectangleShape2D_v8ar8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1251161249]
+sprite_frames = SubResource("SpriteFrames_4om3r")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.4867571

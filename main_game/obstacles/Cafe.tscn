@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://bf7l03yrk08mf"]
+
+[ext_resource type="Texture2D" uid="uid://cgquyk4gor31c" path="res://assets/Cafe1.PNG" id="1_i14jy"]
+[ext_resource type="Texture2D" uid="uid://8t7mkwpakti4" path="res://assets/Cafe2.PNG" id="2_fwdfh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v8ar8"]
+size = Vector2(356, 284)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4om3r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_i14jy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_fwdfh")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.5
+}]
+
+[node name="Cafe" type="StaticBody2D" unique_id=810779703]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=661171386]
+position = Vector2(-2, -28)
+shape = SubResource("RectangleShape2D_v8ar8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1251161249]
+sprite_frames = SubResource("SpriteFrames_4om3r")
+animation = &"idle"
+autoplay = "idle"

@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://b8gb3d3equhqb"]
+
+[ext_resource type="Texture2D" uid="uid://bn3tq5lf2425w" path="res://assets/Observatory.PNG" id="1_41pv4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nohji"]
+size = Vector2(437, 392)
+
+[node name="Chairs" type="StaticBody2D" unique_id=400679283]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1774960304]
+position = Vector2(-3.5, -88)
+shape = SubResource("RectangleShape2D_nohji")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=427385555]
+texture = ExtResource("1_41pv4")
