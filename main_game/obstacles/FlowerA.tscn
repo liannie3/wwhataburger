@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dorxl8envqj2i"]
 
-[ext_resource type="Texture2D" uid="uid://cym6nwbt66klp" path="res://assets/FlowersA.png" id="1_r58ay"]
+[ext_resource type="Texture2D" uid="uid://l5pmfxa0ax2u" path="res://assets/FlowersA.png" id="1_r58ay"]
 
 [node name="FlowerA" type="StaticBody2D" unique_id=237767976]
 

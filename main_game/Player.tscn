@@ -8,8 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://u6a7d07oredl" path="res://sprites/player/BlooberIdle2.png" id="5_8hmdd"]
 [ext_resource type="Texture2D" uid="uid://debbhllay4w4e" path="res://sprites/player/AlienWalk2.png" id="5_aol2y"]
 [ext_resource type="PackedScene" uid="uid://desacpbaccgqn" path="res://main_game/PlayerUI.tscn" id="8_aol2y"]
-[ext_resource type="Texture2D" uid="uid://dm0r0npqaitkf" path="res://sprites/player/BlooberWalk1.png" id="8_kttkf"]
-[ext_resource type="Texture2D" uid="uid://l4x1loassbn5" path="res://sprites/player/BlooberWalk2.png" id="9_g1hxt"]
+[ext_resource type="Texture2D" uid="uid://bvr8em3pmwpm6" path="res://sprites/player/BlooberWalk1.png" id="8_kttkf"]
+[ext_resource type="Texture2D" uid="uid://rkje8aklmf56" path="res://sprites/player/BlooberWalk2.png" id="9_g1hxt"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ng460"]
 animations = [{
