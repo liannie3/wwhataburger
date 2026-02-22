@@ -3,9 +3,17 @@ class_name Player
 
 @export var player_id: int = 1 
 @export var speed: float = 300.0
+@onready var minimap_dot = $MinimapDot
 
 @onready var anim = $AnimatedSprite2D
 
+func _ready():
+	# Paint the dot based on the player ID!
+	if player_id == 1:
+		minimap_dot.modulate = Color.DARK_GREEN  
+	else:
+		minimap_dot.modulate = Color.REBECCA_PURPLE
+		
 func _physics_process(delta: float) -> void:
 	# 1. Build the action strings dynamically based on the player_id
 	# If player_id is 1, this becomes "p1_up". If i2t's 2, it becomes "p2_up".

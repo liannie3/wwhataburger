@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://bxfumbre853g0"]
 
 [ext_resource type="Script" uid="uid://btyjk4pnj7pyg" path="res://main_game/player.gd" id="1_hqf23"]
-[ext_resource type="Texture2D" uid="uid://dyxoe3gjn71x1" path="res://sprites/player/AlienIdle1.png" id="2_r21c5"]
-[ext_resource type="Texture2D" uid="uid://kf71oh523g47" path="res://sprites/player/AlienIdle2.png" id="3_o5nb7"]
-[ext_resource type="Texture2D" uid="uid://pm3bytt6tfjo" path="res://sprites/player/AlienWalk1.png" id="4_4a63n"]
-[ext_resource type="Texture2D" uid="uid://c7jqeyraqxo6n" path="res://sprites/player/BlooberIdle1.png" id="4_ng460"]
-[ext_resource type="Texture2D" uid="uid://cidcnqt7okqk2" path="res://sprites/player/BlooberIdle2.png" id="5_8hmdd"]
-[ext_resource type="Texture2D" uid="uid://owf3akvon06l" path="res://sprites/player/AlienWalk2.png" id="5_aol2y"]
+[ext_resource type="Texture2D" uid="uid://0k4xewl02xc5" path="res://sprites/player/AlienIdle1.PNG" id="2_r21c5"]
+[ext_resource type="Texture2D" uid="uid://dd4nn5m7d2ke1" path="res://sprites/player/AlienIdle2.PNG" id="3_o5nb7"]
+[ext_resource type="Texture2D" uid="uid://3xaduxd045qt" path="res://sprites/player/AlienWalk1.PNG" id="4_4a63n"]
+[ext_resource type="Texture2D" uid="uid://cegv6k7a1tptd" path="res://sprites/player/BlooberIdle1.PNG" id="4_ng460"]
+[ext_resource type="Texture2D" uid="uid://u6a7d07oredl" path="res://sprites/player/BlooberIdle2.PNG" id="5_8hmdd"]
+[ext_resource type="Texture2D" uid="uid://debbhllay4w4e" path="res://sprites/player/AlienWalk2.PNG" id="5_aol2y"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ng460"]
 animations = [{
@@ -58,6 +58,10 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8hmdd"]
 size = Vector2(85, 137)
 
+[sub_resource type="SphereMesh" id="SphereMesh_4a63n"]
+radius = 75.0
+height = 150.0
+
 [node name="Player" type="CharacterBody2D" unique_id=520688584]
 script = ExtResource("1_hqf23")
 
@@ -74,3 +78,7 @@ limit_left = 0
 limit_top = 0
 limit_right = 2000
 limit_bottom = 2000
+
+[node name="MinimapDot" type="MeshInstance2D" parent="." unique_id=107359048]
+visibility_layer = 2
+mesh = SubResource("SphereMesh_4a63n")

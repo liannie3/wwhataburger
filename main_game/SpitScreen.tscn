@@ -3,6 +3,14 @@
 [ext_resource type="Script" uid="uid://cqyhd7rayxr3g" path="res://main_game/spit_screen.gd" id="1_1142w"]
 [ext_resource type="PackedScene" uid="uid://3iselbpvlq0y" path="res://main_game/MainGame.tscn" id="2_f4b40"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1142w"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 1)
+
 [node name="SpitScreen" type="Control" unique_id=498784060]
 layout_mode = 3
 anchors_preset = 15
@@ -27,6 +35,7 @@ stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="HBoxContainer/SubViewportContainer" unique_id=994697696]
 handle_input_locally = false
+canvas_cull_mask = 4294967293
 size = Vector2i(638, 720)
 render_target_update_mode = 4
 
@@ -39,25 +48,32 @@ stretch = true
 
 [node name="SubViewport2" type="SubViewport" parent="HBoxContainer/SubViewportContainer2" unique_id=1197239889]
 handle_input_locally = false
+canvas_cull_mask = 4294967293
 size = Vector2i(638, 720)
 render_target_update_mode = 4
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=112051585]
 
-[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer" unique_id=918142653]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer" unique_id=107663375]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -150.0
+offset_top = 20.0
+offset_right = 150.0
+offset_bottom = 320.0
 grow_horizontal = 2
-grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1142w")
 
-[node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer/CenterContainer" unique_id=307514615]
-custom_minimum_size = Vector2(300, 300)
+[node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer/PanelContainer" unique_id=307514615]
+custom_minimum_size = Vector2(400, 400)
 layout_mode = 2
 
-[node name="SubViewport" type="SubViewport" parent="CanvasLayer/CenterContainer/SubViewportContainer" unique_id=1062316975]
-size = Vector2i(300, 300)
+[node name="SubViewport" type="SubViewport" parent="CanvasLayer/PanelContainer/SubViewportContainer" unique_id=1062316975]
+handle_input_locally = false
+size = Vector2i(400, 400)
+render_target_update_mode = 4
 
-[node name="Camera2D" type="Camera2D" parent="CanvasLayer/CenterContainer/SubViewportContainer/SubViewport" unique_id=1560877012]
+[node name="Camera2D" type="Camera2D" parent="CanvasLayer/PanelContainer/SubViewportContainer/SubViewport" unique_id=1560877012]
 position = Vector2(1000, 1000)
-zoom = Vector2(0.15, 0.15)
+zoom = Vector2(0.2, 0.2)

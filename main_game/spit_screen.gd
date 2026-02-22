@@ -2,7 +2,7 @@ extends Control
 
 @onready var viewport1 = $HBoxContainer/SubViewportContainer/SubViewport
 @onready var viewport2 = $HBoxContainer/SubViewportContainer2/SubViewport2
-@onready var minimap_viewport = $CanvasLayer/CenterContainer/SubViewportContainer/SubViewport
+@onready var minimap_viewport = $CanvasLayer/PanelContainer/SubViewportContainer/SubViewport
 
 func _ready():
 	# 1. Force the right screen to exist in the exact same physical world as the left screen
