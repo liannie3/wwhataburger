@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://masgguh4jref"]
+
+[node name="Player" type="Node2D" unique_id=1076548714]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1565191249]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=291617828]
