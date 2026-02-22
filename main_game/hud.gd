@@ -6,6 +6,7 @@ extends CanvasLayer
 @onready var main_ui_container: VBoxContainer = $Control/VBoxContainer
 @onready var main_control: Control = $Control
 @onready var evidence_label: Label = $Control/VBoxContainer/EvidenceLabel
+@onready var buildings_label: Label = $Control/VBoxContainer/BuildingsLabel
 @onready var emotion_icon: TextureRect = $Control/VBoxContainer/EmotionRow/EmotionIcon
 @onready var emotion_label: Label = $Control/VBoxContainer/EmotionRow/EmotionLabel
 @onready var emotion_row: HBoxContainer = $Control/VBoxContainer/EmotionRow
@@ -14,12 +15,20 @@ extends CanvasLayer
 func _ready() -> void:
 	EmotionManager.emotion_changed.connect(_on_emotion_changed)
 	GlobalStats.evidence_changed.connect(_on_evidence_changed)
-	
+	GlobalStats.building_visited.connect(_on_building_visited)
+
 	var current_emotion = EmotionManager.get_emotion(player_id)
 	_update_emotion_display(current_emotion)
-	
+
 	var initial_evidence = GlobalStats.p1_evidence if player_id == 1 else GlobalStats.p2_evidence
 	_update_evidence_display(initial_evidence)
+
+	# Only show buildings counter from the second playthrough onward
+	if GlobalStats.playthrough_count >= 2:
+		buildings_label.visible = true
+		_update_buildings_display(GlobalStats.buildings_visited)
+	else:
+		buildings_label.visible = false
 
 func _process(_delta: float) -> void:
 	if not duration_bar.visible:
@@ -80,3 +89,9 @@ func _update_emotion_display(emotion: EmotionData.Emotion) -> void:
 
 func _update_evidence_display(amount: int) -> void:
 	evidence_label.text = "Evidence: " + str(amount)
+
+func _on_building_visited(new_count: int) -> void:
+	_update_buildings_display(new_count)
+
+func _update_buildings_display(count: int) -> void:
+	buildings_label.text = "Buildings: " + str(count) + "/3"

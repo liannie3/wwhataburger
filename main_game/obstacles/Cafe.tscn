@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://badseci5151pl" path="res://assets/Cafe1.png" id="1_i14jy"]
 [ext_resource type="Texture2D" uid="uid://cltmxsaxtrsu3" path="res://assets/Cafe2.png" id="2_fwdfh"]
+[ext_resource type="Script" uid="uid://cxqmv0255e4xs" path="res://main_game/obstacles/building_visit_zone.gd" id="3_visit"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v8ar8"]
 size = Vector2(356, 284)
@@ -20,7 +21,10 @@ animations = [{
 "speed": 2.5
 }]
 
-[node name="Cafe" type="StaticBody2D" unique_id=810779703]
+[sub_resource type="CircleShape2D" id="CircleShape2D_cafe"]
+radius = 365.67883
+
+[node name="Cafe2" type="StaticBody2D" unique_id=810779703]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=661171386]
 position = Vector2(-2, -28)
@@ -30,3 +34,12 @@ shape = SubResource("RectangleShape2D_v8ar8")
 sprite_frames = SubResource("SpriteFrames_4om3r")
 animation = &"idle"
 autoplay = "idle"
+
+[node name="VisitZone" type="Area2D" parent="." unique_id=618014028]
+script = ExtResource("3_visit")
+building_name = "The Cafe"
+ghost_text = "This cafe always smelled like fresh coffee and possibility..."
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VisitZone" unique_id=1183105620]
+position = Vector2(8, 89)
+shape = SubResource("CircleShape2D_cafe")

@@ -1,9 +1,13 @@
 [gd_scene format=3 uid="uid://dc5gu6upbjqet"]
 
 [ext_resource type="Texture2D" uid="uid://dw0njo3d5pjyk" path="res://assets/Chairs.png" id="1_7lo1r"]
+[ext_resource type="Script" uid="uid://cxqmv0255e4xs" path="res://main_game/obstacles/building_visit_zone.gd" id="2_visit"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nohji"]
 size = Vector2(196, 66)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_chairs"]
+radius = 290.83673
 
 [node name="Chairs" type="StaticBody2D" unique_id=400679283]
 
@@ -13,3 +17,12 @@ shape = SubResource("RectangleShape2D_nohji")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=427385555]
 texture = ExtResource("1_7lo1r")
+
+[node name="VisitZone" type="Area2D" parent="." unique_id=239332338]
+script = ExtResource("2_visit")
+building_name = "The Chairs"
+ghost_text = "We sat here once and watched the world go by together..."
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VisitZone" unique_id=1937131724]
+position = Vector2(1, 64)
+shape = SubResource("CircleShape2D_chairs")

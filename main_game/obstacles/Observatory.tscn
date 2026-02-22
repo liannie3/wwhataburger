@@ -1,9 +1,13 @@
 [gd_scene format=3 uid="uid://b8gb3d3equhqb"]
 
 [ext_resource type="Texture2D" uid="uid://bntgxhd1075d5" path="res://assets/Observatory.png" id="1_41pv4"]
+[ext_resource type="Script" path="res://main_game/obstacles/building_visit_zone.gd" id="2_visit"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nohji"]
 size = Vector2(437, 392)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_obs"]
+radius = 300.0
 
 [node name="Chairs" type="StaticBody2D" unique_id=400679283]
 
@@ -13,3 +17,11 @@ shape = SubResource("RectangleShape2D_nohji")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=427385555]
 texture = ExtResource("1_41pv4")
+
+[node name="VisitZone" type="Area2D" parent="."]
+script = ExtResource("2_visit")
+building_name = "The Observatory"
+ghost_text = "Under these stars, everything felt infinite..."
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VisitZone"]
+shape = SubResource("CircleShape2D_obs")

@@ -31,6 +31,8 @@ func _ready() -> void:
 	EventBus.hide_prompt.connect(_on_hide_prompt)
 	EventBus.show_dialogue.connect(_on_show_dialogue)
 	EventBus.hide_dialogue.connect(_on_hide_dialogue)
+	EventBus.show_visit_prompt.connect(_on_show_visit_prompt)
+	EventBus.hide_visit_prompt.connect(_on_hide_visit_prompt)
 
 
 # --- DIALOGUE ANIMATION LOGIC ---
@@ -107,3 +109,10 @@ func _on_show_prompt(id: int, text: String) -> void:
 func _on_hide_prompt(id: int) -> void:
 	if id == player_id:
 		ghost_prompt.hide()
+
+func _on_show_visit_prompt(text: String) -> void:
+	ghost_prompt.text = text
+	ghost_prompt.show()
+
+func _on_hide_visit_prompt() -> void:
+	ghost_prompt.hide()

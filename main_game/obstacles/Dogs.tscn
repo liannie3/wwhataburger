@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://clcuatsa8odhe" path="res://assets/Dog3.png" id="3_u5xwl"]
 [ext_resource type="Texture2D" uid="uid://dsvg0ienxylwv" path="res://assets/Dog4.png" id="4_6eodc"]
 [ext_resource type="Texture2D" uid="uid://buh35l7jmpy3e" path="res://assets/Dog5.png" id="5_4dpq1"]
+[ext_resource type="Script" path="res://main_game/obstacles/building_visit_zone.gd" id="6_visit"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v8ar8"]
 size = Vector2(322, 265)
@@ -38,6 +39,9 @@ animations = [{
 "speed": 15.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_dogs"]
+radius = 230.0
+
 [node name="Cafe" type="StaticBody2D" unique_id=810779703]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=661171386]
@@ -49,3 +53,11 @@ sprite_frames = SubResource("SpriteFrames_4om3r")
 animation = &"idle"
 autoplay = "idle"
 frame_progress = 0.4867571
+
+[node name="VisitZone" type="Area2D" parent="."]
+script = ExtResource("6_visit")
+building_name = "The Dog Park"
+ghost_text = "The dogs here always knew how to make us smile..."
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VisitZone"]
+shape = SubResource("CircleShape2D_dogs")
