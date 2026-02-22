@@ -12,42 +12,51 @@ extends Area2D
     "Take your marital disputes somewhere else before I call the Homeowners Association!"
 ]
 @export var p1_first_contact_emotion: EmotionData.Emotion = EmotionData.Emotion.ANGER
+@export var p1_first_contact_evidence: bool = false
+
 @export var p1_cold_dialogues: Array[String] = [
 	"Oh, great. The other half of the disaster.",
 	"Your soon-to-be-ex was just here complaining about the shared Netflix password.",
     "Please, I just want to water my petunias in peace..."
 ]
 @export var p1_cold_emotion: EmotionData.Emotion = EmotionData.Emotion.SADNESS
+@export var p1_cold_evidence: bool = false
+
 @export var p1_repeat_dialogues: Array[String] = [
 	"I still don't know who shrunk your favorite sweater in the wash.",
     "Leave me out of your messy asset division."
 ]
 @export var p1_repeat_emotion: EmotionData.Emotion = EmotionData.Emotion.SADNESS
+@export var p1_repeat_evidence: bool = false
+
 @export var p2_first_contact_dialogues: Array[String] = [
 	"Oh... hello. I heard about the split. Tragic, really.",
 	"It's just devastating when a couple can't agree on who gets custody of the prized lawn gnome.",
     "I'm sorry, I just can't bear to take sides right now..."
 ]
 @export var p2_first_contact_emotion: EmotionData.Emotion = EmotionData.Emotion.SADNESS
+@export var p2_first_contact_evidence: bool = false
+
 @export var p2_cold_dialogues: Array[String] = [
 	"I can't believe your partner was just here aggressively demanding the fondue set.",
 	"This whole divorce is tearing our weekly book club apart.",
     "Just go. My heart can't take any more neighborhood drama."
 ]
 @export var p2_cold_emotion: EmotionData.Emotion = EmotionData.Emotion.SADNESS
+@export var p2_cold_evidence: bool = false
+
 @export var p2_repeat_dialogues: Array[String] = [
 	"*sigh* Are you still looking for 'evidence' of the thermostat tampering?",
     "I have no more domestic secrets to reveal. Shoo."
 ]
 @export var p2_repeat_emotion: EmotionData.Emotion = EmotionData.Emotion.SADNESS
-
-
-@export var evidence_chance: float = 1.0  # 0.0–1.0 probability of giving evidence
+@export var p2_repeat_evidence: bool = false
 # ==========================================
 
 var dialogue_index: int = 0
 var current_dialogues: Array[String] = []
 var pending_emotion: EmotionData.Emotion = EmotionData.Emotion.NONE
+var pending_evidence: bool = false
 var has_p1_talked: bool = false
 var has_p2_talked: bool = false
 var someone_talked_first: bool = false
@@ -116,37 +125,45 @@ func start_interaction(player: Player):
 		
 	var id = player.player_id
 	var chosen_emotion: EmotionData.Emotion = EmotionData.Emotion.NONE
-	
+	var chosen_evidence: bool = false
+
 	# Determine which of the 3 dialogues to use
 	if id == 1:
 		if has_p1_talked:
 			current_dialogues = p1_repeat_dialogues
 			chosen_emotion = p1_repeat_emotion
+			chosen_evidence = p1_repeat_evidence
 		elif someone_talked_first:
 			current_dialogues = p1_cold_dialogues
 			chosen_emotion = p1_cold_emotion
+			chosen_evidence = p1_cold_evidence
 			has_p1_talked = true
 		else:
 			current_dialogues = p1_first_contact_dialogues
 			chosen_emotion = p1_first_contact_emotion
+			chosen_evidence = p1_first_contact_evidence
 			has_p1_talked = true
 			someone_talked_first = true
 	elif id == 2:
 		if has_p2_talked:
 			current_dialogues = p2_repeat_dialogues
 			chosen_emotion = p2_repeat_emotion
+			chosen_evidence = p2_repeat_evidence
 		elif someone_talked_first:
 			current_dialogues = p2_cold_dialogues
 			chosen_emotion = p2_cold_emotion
+			chosen_evidence = p2_cold_evidence
 			has_p2_talked = true
 		else:
 			current_dialogues = p2_first_contact_dialogues
 			chosen_emotion = p2_first_contact_emotion
+			chosen_evidence = p2_first_contact_evidence
 			has_p2_talked = true
 			someone_talked_first = true
 
 	dialogue_index = 0
 	pending_emotion = chosen_emotion
+	pending_evidence = chosen_evidence
 
 	if current_dialogues.is_empty():
 		print("Warning: NPC has no dialogue set for this state!")
@@ -167,7 +184,9 @@ func end_interaction():
 		EmotionManager.set_emotion(id, pending_emotion)
 		pending_emotion = EmotionData.Emotion.NONE
 
-	# Maybe give evidence later
+	if pending_evidence:
+		GlobalStats.add_evidence(id, 1)
+		pending_evidence = false
 
 	is_talking = false
 	EventBus.hide_dialogue.emit(active_player.player_id)

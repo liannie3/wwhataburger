@@ -206,6 +206,8 @@ custom_sprite_frames = SubResource("SpriteFrames_dfupt")
 [node name="Nico" parent="." unique_id=2089880231 instance=ExtResource("4_03gfc")]
 position = Vector2(1340, 311)
 custom_sprite_frames = SubResource("SpriteFrames_d6ead")
+p1_first_contact_emotion = 2
+p1_first_contact_evidence = true
 
 [node name="AJ" parent="." unique_id=1812305599 instance=ExtResource("4_03gfc")]
 position = Vector2(2655, 2837)
