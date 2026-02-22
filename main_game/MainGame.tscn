@@ -1,6 +1,17 @@
 [gd_scene format=3 uid="uid://3iselbpvlq0y"]
 
 [ext_resource type="Script" uid="uid://dn0rqb5ao5m7m" path="res://main_game/main_game.gd" id="1_0lykq"]
+[ext_resource type="PackedScene" uid="uid://brv68b8cm4jnd" path="res://main_game/Arena.tscn" id="2_arena"]
+[ext_resource type="PackedScene" uid="uid://masgguh4jref" path="res://main_game/Player.tscn" id="3_p3wb7"]
 
 [node name="MainGame" type="Node2D" unique_id=1780440313]
 script = ExtResource("1_0lykq")
+
+[node name="Arena" parent="." unique_id=678867647 instance=ExtResource("2_arena")]
+
+[node name="Player" parent="." unique_id=520688584 instance=ExtResource("3_p3wb7")]
+position = Vector2(100, 100)
+
+[node name="Player2" parent="." unique_id=77006209 instance=ExtResource("3_p3wb7")]
+position = Vector2(500, 500)
+player_id = 2
