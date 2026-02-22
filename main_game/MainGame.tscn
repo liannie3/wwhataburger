@@ -4,9 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://gbsug7oj0630" path="res://main_game/Arena.tscn" id="2_arena"]
 [ext_resource type="PackedScene" uid="uid://bxfumbre853g0" path="res://main_game/Player.tscn" id="3_p3wb7"]
 [ext_resource type="PackedScene" uid="uid://bfu4lj43j681i" path="res://main_game/NPC.tscn" id="4_03gfc"]
-[ext_resource type="Texture2D" uid="uid://gg2oelvtcayd" path="res://sprites/npcs/AdamIdle1.PNG" id="5_5w7a5"]
+[ext_resource type="Texture2D" uid="uid://gg2oelvtcayd" path="res://sprites/npcs/AdamIdle1.png" id="5_5w7a5"]
 [ext_resource type="PackedScene" uid="uid://cr5usn0g1yji0" path="res://main_game/TestEmotion.tscn" id="5_w0aw3"]
-[ext_resource type="Texture2D" uid="uid://ddf50mcu78omo" path="res://sprites/npcs/AdamIdle2.PNG" id="6_htu3c"]
+[ext_resource type="Texture2D" uid="uid://ddf50mcu78omo" path="res://sprites/npcs/AdamIdle2.png" id="6_htu3c"]
 [ext_resource type="Texture2D" uid="uid://c8plwimjbf6kg" path="res://sprites/npcs/BlessIdle1.png" id="8_w4cjx"]
 [ext_resource type="Texture2D" uid="uid://bhdcq68bqcjd8" path="res://sprites/npcs/BlessIdle2.png" id="9_i6yq4"]
 [ext_resource type="Texture2D" uid="uid://cc2qkth0a5g77" path="res://sprites/npcs/Cluzz1.png" id="10_68l2i"]
@@ -182,19 +182,19 @@ player_id = 2
 [node name="Adam" parent="." unique_id=364730679 instance=ExtResource("4_03gfc")]
 position = Vector2(1898, 2442)
 custom_sprite_frames = SubResource("SpriteFrames_2pwrp")
-npc_name = "Adam"
+npc_name = "Zadam"
 ghost_text = "Neighborhood Resident"
-p1_first_contact_dialogues = Array[String]([" Hello. My name is Adam.", "I saw Erica get angsty with the bartender for more drinks the other night. "])
+p1_first_contact_dialogues = Array[String]([" Hello. My name is Zadam.", "I saw Zerica get angsty with the bartender for more drinks the other night. "])
 p1_first_contact_emotion = 5
 p1_first_contact_evidence = true
-p1_cold_dialogues = Array[String](["I just saw Erica. ", "I might've told him some things about you."])
+p1_cold_dialogues = Array[String](["I just saw Zerica. I might've told him some things about you.", "Why are you guys fighting? Who is going to win?"])
 p1_cold_emotion = 1
 p1_repeat_dialogues = Array[String](["That's all I've heard. I don't know anything else."])
 p1_repeat_emotion = 0
-p2_first_contact_dialogues = Array[String](["Hello. My name is Adam. ", "At work, Bill has stopped contributing to the team. ", "I wonder what’s up with him."])
+p2_first_contact_dialogues = Array[String](["Hello. My name is Zadam. ", "At work, Zill has stopped contributing to the team. ", "I wonder what’s up with him."])
 p2_first_contact_emotion = 5
 p2_first_contact_evidence = true
-p2_cold_dialogues = Array[String](["I just saw William.", "I might've told him some things about you."])
+p2_cold_dialogues = Array[String](["I just saw Zilliam. I might've told him some things about you.", "What are you guys fighting over? Who is winning?"])
 p2_cold_emotion = 1
 p2_repeat_dialogues = Array[String](["That's all I know. He's still a great alien."])
 p2_repeat_emotion = 0
@@ -206,29 +206,32 @@ emotion_to_apply = 7
 [node name="Bless" parent="." unique_id=2116983378 instance=ExtResource("4_03gfc")]
 position = Vector2(1167, 2954)
 custom_sprite_frames = SubResource("SpriteFrames_xrqgx")
-npc_name = "Blessing"
+npc_name = "Zlessing"
 ghost_text = "Erica's favorite child"
-p1_first_contact_dialogues = Array[String](["Bill always makes that disgusting vegetable soup. I miss Erica’s cooking.", "Oh... Sorry. Didn't see you there."])
+p1_first_contact_dialogues = Array[String](["Zill always makes that disgusting vegetable soup. I miss Erica’s cooking.", "Oh... Sorry. Didn't see you there."])
 p1_first_contact_emotion = 2
 p1_cold_dialogues = Array[String](["Oh.. Sorry. I love your cooking sometimes."])
-p1_repeat_dialogues = Array[String](["I didn't mean it, I swear."])
-p2_first_contact_dialogues = Array[String](["Bill always makes that disgusting vegetable soup. I miss Erica’s cooking.", "Oh, hey! Can you cook more?"])
+p1_repeat_dialogues = Array[String](["I didn't mean it, I swear. I do know something about Zerica."])
+p1_repeat_evidence = true
+p2_first_contact_dialogues = Array[String](["Zill always makes that disgusting vegetable soup. I miss Erica’s cooking.", "Oh, hey! Can you cook more?"])
 p2_first_contact_emotion = 7
 p2_first_contact_evidence = true
-p2_cold_dialogues = Array[String](["Your cooking actually tastes so much better than Bill's."])
+p2_cold_dialogues = Array[String](["Your cooking actually tastes so much better than Zill's."])
 p2_cold_emotion = 5
+p2_cold_evidence = true
 p2_repeat_dialogues = Array[String](["I'm so excited for your next dish!"])
 p2_repeat_emotion = 5
 
 [node name="Cluzz" parent="." unique_id=1945537862 instance=ExtResource("4_03gfc")]
 position = Vector2(1634, 1558)
 custom_sprite_frames = SubResource("SpriteFrames_b3kdp")
-npc_name = "Cluzz"
+npc_name = "Zluzz"
 ghost_text = "An old school rival of Erica"
-p1_first_contact_dialogues = Array[String](["Hey, Bill. I heard Erica has been searching for some dirt on you. You should beat him to it.", "I think you can win.", "Don't doubt yourself. Nah you'd win."])
+p1_first_contact_dialogues = Array[String](["Hey, Zill. I heard Zerica has been searching for some dirt on you. You should beat him to it.", "I think you can win.", "Don't doubt yourself. Nah you'd win."])
 p1_first_contact_emotion = 6
 p1_first_contact_evidence = true
-p1_cold_dialogues = Array[String](["Heyyyy, Erica recently came and talked to me.", "I honestly feel bad, but I wanted to let you know something to help you win."])
+p1_cold_dialogues = Array[String](["Heyyyy, Zerica recently came and talked to me.", "I honestly feel bad, but I wanted to let you know something to help you win."])
+p1_cold_emotion = 5
 p1_cold_evidence = true
 p1_repeat_dialogues = Array[String](["Sorry, I don't have anything else.", "You'd win though."])
 p1_repeat_emotion = 5
@@ -243,29 +246,133 @@ p2_repeat_evidence = true
 [node name="Justin" parent="." unique_id=583000246 instance=ExtResource("4_03gfc")]
 position = Vector2(2959, 1861)
 custom_sprite_frames = SubResource("SpriteFrames_wyxkk")
+npc_name = "Zustin "
+ghost_text = "Dog Lover"
+p1_first_contact_dialogues = Array[String](["Yo, Zill! Zerica? Man, I remember when you guys came here to adopt that dog.", "You couldn’t agree on a name for the longest time! "])
+p1_first_contact_evidence = true
+p1_cold_dialogues = Array[String](["Zerica just came by! You just missed her!"])
+p1_cold_emotion = 3
+p1_repeat_dialogues = Array[String](["What's wrong, Zill? Why are you guys fighting?", "It's not always about winning."])
+p1_repeat_emotion = 7
+p1_repeat_evidence = true
+p2_first_contact_dialogues = Array[String]([" Yo, Zerica! Zill? Man, I remember when you guys came here to adopt that dog.", "You couldn’t agree on a name for the longest time! "])
+p2_first_contact_emotion = 4
+p2_first_contact_evidence = true
+p2_cold_dialogues = Array[String](["Zill just came by! You just missed her!"])
+p2_cold_emotion = 3
+p2_repeat_dialogues = Array[String](["What's wrong, Zerica? Why are you guys fighting?", "It's not always about winning."])
+p2_repeat_evidence = true
 
 [node name="Kat" parent="." unique_id=348187083 instance=ExtResource("4_03gfc")]
 position = Vector2(2931, 458)
 custom_sprite_frames = SubResource("SpriteFrames_dfupt")
+npc_name = "Zat"
+ghost_text = "Diner Owner"
+p1_first_contact_dialogues = Array[String](["I just saw you guys a month ago! I remember you guys used to loved spending all time.", "What happened?"])
+p1_first_contact_evidence = true
+p1_cold_dialogues = Array[String](["How much do you care about winning?"])
+p1_cold_emotion = 4
+p1_repeat_dialogues = Array[String](["Is this really worth it?"])
+p1_repeat_emotion = 7
+p2_first_contact_dialogues = Array[String](["I just saw you guys a month ago! I remember you guys used to love spending all your time together.", "What happened?"])
+p2_first_contact_emotion = 1
+p2_first_contact_evidence = true
+p2_cold_dialogues = Array[String](["How much do you care about winning?"])
+p2_cold_emotion = 6
+p2_repeat_dialogues = Array[String](["Is this really worth it?"])
+p2_repeat_emotion = 7
 
 [node name="Nico" parent="." unique_id=2089880231 instance=ExtResource("4_03gfc")]
 position = Vector2(1340, 311)
 custom_sprite_frames = SubResource("SpriteFrames_d6ead")
-p1_first_contact_emotion = 2
+npc_name = "Zico"
+ghost_text = "Neighborhood Resident"
+p1_first_contact_dialogues = Array[String](["What’s that? Are you asking about Zerica? She hasn’t been showing up to work on time lately.", "She’s usually the first one here. It’s pretty strange, actually; I wonder what she’s going through. "])
+p1_first_contact_emotion = 6
 p1_first_contact_evidence = true
+p1_cold_dialogues = Array[String]([" I think there’s something in my colon... ", "Hey Zill! Oh, did you need something from me?", "Zerica was just here; you should go catch up with her.."])
+p1_cold_emotion = 3
+p1_repeat_dialogues = Array[String](["I did find out that ZErica was the one that stained your sweater though."])
+p1_repeat_emotion = 5
+p1_repeat_evidence = true
+p2_first_contact_dialogues = Array[String](["Hey, Zerica! Zill? Haven’t seen him in a while.", "Heard from a neighbor that he’s been blasting music at night lately. You should check on him!"])
+p2_first_contact_emotion = 4
+p2_first_contact_evidence = true
+p2_cold_dialogues = Array[String](["My colon has been acting up lately. Oh what’s up Zerica?", "Zill was just here. He wanted to know some stuff about you. You should start coming to work earlier.", "I got nothing for you, though. "])
+p2_cold_emotion = 5
+p2_repeat_dialogues = Array[String](["What is this thing you guys are fighting over?", "Are you going to win?"])
 
 [node name="AJ" parent="." unique_id=1812305599 instance=ExtResource("4_03gfc")]
 position = Vector2(2655, 2837)
 custom_sprite_frames = SubResource("SpriteFrames_f88r1")
+npc_name = "ZAJ"
+ghost_text = "Photographer"
+p1_first_contact_dialogues = Array[String](["What’s up, Zill! ", "You know I still have those outtakes from your photo sessions. Zerica was laughing so hard at your joke.", "I’ve never seen two people so close."])
+p1_first_contact_emotion = 3
+p1_first_contact_evidence = true
+p1_cold_dialogues = Array[String](["Hey, Zill! I just saw Zerica. He seemed pretty frantic. ", "You better get him!"])
+p1_repeat_dialogues = Array[String](["Do you guys need a photo soon?", "You guys were always obssessed with winning."])
+p1_repeat_emotion = 4
+p2_first_contact_dialogues = Array[String](["What’s up, Zerica! You know I still have those outtakes from your photo sessions.", "You were laughing so hard at Zill’s jokes.", "I’ve never seen two people so close."])
+p2_first_contact_emotion = 3
+p2_first_contact_evidence = true
+p2_cold_dialogues = Array[String](["Hey there, Zerica!", "Zill was here asking about you. Is everything alright?"])
+p2_repeat_dialogues = Array[String](["Do you guys need a picture soon? ", "Zill is really trying to get that victory photo. ", "Don't know if you're a part of it."])
+p2_repeat_emotion = 4
+p2_repeat_evidence = true
 
 [node name="Harsh" parent="." unique_id=512550778 instance=ExtResource("4_03gfc")]
 position = Vector2(573, 2526)
 custom_sprite_frames = SubResource("SpriteFrames_eyw1g")
+npc_name = "Zarsh"
+ghost_text = "Great friend"
+p1_first_contact_dialogues = Array[String](["I just talked to Zerica. You guys are fighting?", "Wasn’t it so recently that the three of us came to this observatory to watch the stars?", "I almost felt left out since you two were talking the whole time"])
+p1_first_contact_emotion = 7
+p1_first_contact_evidence = true
+p1_cold_dialogues = Array[String](["I just talked to Zerica. You guys are fighting?", "It feels like yesterday, the three of us came to this observatory to watch the stars.", "If anything, I could’ve sworn I was the one who felt left out."])
+p1_cold_emotion = 7
+p1_repeat_dialogues = Array[String](["Maybe it's time to stop caring about who's winning."])
+p1_repeat_emotion = 7
+p2_first_contact_dialogues = Array[String](["How are you? You and Zill are fighting?", "It feels like yesterday, the three of us came to this observatory to watch the stars.", "If anything, I could’ve sworn I was the one who felt left out."])
+p2_first_contact_emotion = 7
+p2_cold_dialogues = Array[String](["Zill was just here asking about you too. Why are you two arguing?", "Wasn’t it so recently that the three of us came to this observatory to watch the stars?", "I almost felt left out since you two were talking the whole time."])
+p2_cold_emotion = 7
+p2_repeat_dialogues = Array[String](["Maybe it's time to stop caring about who's winning."])
+p2_repeat_emotion = 7
 
 [node name="Niki" parent="." unique_id=715532282 instance=ExtResource("4_03gfc")]
 position = Vector2(777, 1030)
 custom_sprite_frames = SubResource("SpriteFrames_p772m")
+npc_name = "Ziki"
+ghost_text = "Barista"
+p1_first_contact_dialogues = Array[String](["Hi Zill! Why do you want to hear bad things about Zerica? You guys used to hang out all the time in the corner back there. ", "You guys used to hang out all the time in the corner back there. ", "Are you sure about what you're doing? Who's going to win here?"])
+p1_first_contact_emotion = 2
+p1_first_contact_evidence = true
+p1_cold_dialogues = Array[String](["Zerica just passed by. He seemed a little off. ", "You guys can't be that concerned with winning, can you?"])
+p1_cold_emotion = 1
+p1_repeat_dialogues = Array[String](["I'm telling you guys to stop being so concerned with winning."])
+p1_repeat_emotion = 6
+p2_first_contact_dialogues = Array[String](["Hello, Zerica! You want some dirt on Zill? What happened?. I heard about the split. Tragic, really.", "You guys used to be so close.", "Well, he hasn’t been returning my “Have a nice day”s recently.", "Are you sure about what you're doing? Who's going to win here?"])
+p2_first_contact_emotion = 4
+p2_first_contact_evidence = true
+p2_cold_dialogues = Array[String](["Zerica just passed by. He seemed a little off. ", "You guys can't be that concerned with winning, can you?"])
+p2_cold_emotion = 3
+p2_repeat_dialogues = Array[String](["I'm telling you guys to stop being so concerned with winning."])
+p2_repeat_emotion = 1
 
 [node name="Rita" parent="." unique_id=1468558610 instance=ExtResource("4_03gfc")]
 position = Vector2(1906, 725)
 custom_sprite_frames = SubResource("SpriteFrames_amw20")
+npc_name = "Zita"
+ghost_text = "Park Enjoyer"
+p1_first_contact_dialogues = Array[String](["Zill! No way! Is something happening to you and Zerica?", "I remember the day I saw you guys go on that picnic out here. ", "You guys looked like you had so much fun."])
+p1_first_contact_emotion = 7
+p1_cold_dialogues = Array[String](["I just saw Zerica walk by! ", "The two of you remind me of how my husband and I used to be."])
+p1_cold_emotion = 4
+p1_repeat_dialogues = Array[String](["I always loved seeing you guys feed each other."])
+p2_first_contact_dialogues = Array[String](["Zerica, my pookie! No way! Is something happening to you and Zill?", "I remember the day I saw you two on that picnic out here.", "You looked like you were having so much fun…"])
+p2_first_contact_emotion = 7
+p2_first_contact_evidence = true
+p2_cold_dialogues = Array[String](["I just saw Zill walk by. ", "The two of you remind me of how my husband and I used to be."])
+p2_repeat_dialogues = Array[String](["I always loved seeing you guys feed each other."])
+p2_repeat_emotion = 4
