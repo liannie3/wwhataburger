@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c7jqeyraqxo6n"
-path="res://.godot/imported/BlooberIdle1.PNG-b35333b677b0163e4fb942ae8b34b41e.ctex"
+uid="uid://cegv6k7a1tptd"
+path="res://.godot/imported/BlooberIdle1.png-25691716356282cb78bdbd44f986f52b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/player/BlooberIdle1.PNG"
-dest_files=["res://.godot/imported/BlooberIdle1.PNG-b35333b677b0163e4fb942ae8b34b41e.ctex"]
+source_file="res://sprites/player/BlooberIdle1.png"
+dest_files=["res://.godot/imported/BlooberIdle1.png-25691716356282cb78bdbd44f986f52b.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://owf3akvon06l"
-path="res://.godot/imported/AlienWalk2.PNG-5c892a4ef38f706380ff5c2c7fa16eda.ctex"
+uid="uid://pm3bytt6tfjo"
+path="res://.godot/imported/AlienWalk1.png-58c9bcbdde1df31e2ed1934d424cc0d9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/player/AlienWalk2.PNG"
-dest_files=["res://.godot/imported/AlienWalk2.PNG-5c892a4ef38f706380ff5c2c7fa16eda.ctex"]
+source_file="res://sprites/player/AlienWalk1.png"
+dest_files=["res://.godot/imported/AlienWalk1.png-58c9bcbdde1df31e2ed1934d424cc0d9.ctex"]
 
 [params]
 
