@@ -185,6 +185,7 @@ custom_sprite_frames = SubResource("SpriteFrames_2pwrp")
 
 [node name="TestEmotion" parent="." unique_id=1897053641 instance=ExtResource("5_w0aw3")]
 position = Vector2(500, 300)
+emotion_to_apply = 7
 
 [node name="Bless" parent="." unique_id=2116983378 instance=ExtResource("4_03gfc")]
 position = Vector2(1167, 2954)
