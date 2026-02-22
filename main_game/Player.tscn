@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://u6a7d07oredl" path="res://sprites/player/BlooberIdle2.png" id="5_8hmdd"]
 [ext_resource type="Texture2D" uid="uid://debbhllay4w4e" path="res://sprites/player/AlienWalk2.png" id="5_aol2y"]
 [ext_resource type="PackedScene" uid="uid://desacpbaccgqn" path="res://main_game/PlayerUI.tscn" id="8_aol2y"]
+[ext_resource type="Texture2D" uid="uid://dm0r0npqaitkf" path="res://sprites/player/BlooberWalk1.PNG" id="8_kttkf"]
+[ext_resource type="Texture2D" uid="uid://l4x1loassbn5" path="res://sprites/player/BlooberWalk2.PNG" id="9_g1hxt"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ng460"]
 animations = [{
@@ -46,14 +48,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_ng460")
+"texture": ExtResource("8_kttkf")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_8hmdd")
+"texture": ExtResource("9_g1hxt")
 }],
 "loop": true,
 "name": &"p2_move",
-"speed": 2.5
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8hmdd"]
@@ -68,7 +70,7 @@ script = ExtResource("1_hqf23")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1565191249]
 sprite_frames = SubResource("SpriteFrames_ng460")
-animation = &"p1_move"
+animation = &"p2_move"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=291617828]
 position = Vector2(0.5, 4.5)

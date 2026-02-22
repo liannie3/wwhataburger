@@ -61,7 +61,7 @@ func _physics_process(delta: float) -> void:
 	if velocity.length() > 10.0:
 		anim.play(prefix + "move")
 		if velocity.x != 0:
-			anim.flip_h = velocity.x < 0
+			anim.flip_h = velocity.x > 0
 	else:
 		anim.play(prefix + "idle")
 
