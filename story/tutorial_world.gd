@@ -55,12 +55,12 @@ func _advance_player(player_id: int) -> void:
 		p1_step = TutorialStep.APPROACH_NPC
 		EventBus.hide_prompt.emit(1)
 		await get_tree().create_timer(0.3).timeout
-		EventBus.show_prompt.emit(1, "Walk up to the NPC!")
+		EventBus.show_prompt.emit(1, "Walk up to the NPC and gather evidence!")
 	else:
 		p2_step = TutorialStep.APPROACH_NPC
 		EventBus.hide_prompt.emit(2)
 		await get_tree().create_timer(0.3).timeout
-		EventBus.show_prompt.emit(2, "Walk up to the NPC!")
+		EventBus.show_prompt.emit(2, "Walk up to the NPC and gather evidence!")
 
 func _on_evidence_changed(player_id: int, _new_amount: int) -> void:
 	if player_id == 1 and not p1_completed:
