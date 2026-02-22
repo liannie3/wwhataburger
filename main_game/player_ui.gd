@@ -90,7 +90,7 @@ func _idle_bubble_loop():
 		use_frame_six = not use_frame_six
 		
 		# Idle animation speed! (Slightly slower than pop-in so it doesn't vibrate violently)
-		await get_tree().create_timer(0.15).timeout 
+		await get_tree().create_timer(0.45).timeout 
 
 func close_bubble():
 	# Only close if it's currently open or opening
