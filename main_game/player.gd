@@ -8,11 +8,11 @@ extends CharacterBody2D
 func _physics_process(delta: float) -> void:
 	# 1. Build the action strings dynamically based on the player_id
 	# If player_id is 1, this becomes "p1_up". If it's 2, it becomes "p2_up".
-	var prefix = "p" + str(player_id)
-	var up = prefix + "_up"
-	var down = prefix + "_down"
-	var left = prefix + "_left"
-	var right = prefix + "_right"
+	var prefix = "p" + str(player_id) + "_"
+	var up = prefix + "up"
+	var down = prefix + "down"
+	var left = prefix + "left"
+	var right = prefix + "right"
 
 	# 2. Get the movement direction using our dynamically created strings
 	var direction = Input.get_vector(left, right, up, down)
