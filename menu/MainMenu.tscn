@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ds3v1bkautgkt"]
 
 [ext_resource type="Script" uid="uid://bdguti248p300" path="res://menu/main_menu.gd" id="1_0gkbj"]
-[ext_resource type="Texture2D" uid="uid://c0hasb4r642hu" path="res://assets/title_screen.PNG" id="2_rbtx8"]
+[ext_resource type="Texture2D" uid="uid://by4s4yh7i0iqb" path="res://assets/title_screen.png" id="2_rbtx8"]
 [ext_resource type="FontFile" uid="uid://bu3fgtpct0bl0" path="res://assets/PatrickHandSC-Regular.ttf" id="3_wn5o1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kh61s"]
