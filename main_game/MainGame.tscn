@@ -4,7 +4,103 @@
 [ext_resource type="PackedScene" uid="uid://gbsug7oj0630" path="res://main_game/Arena.tscn" id="2_arena"]
 [ext_resource type="PackedScene" uid="uid://bxfumbre853g0" path="res://main_game/Player.tscn" id="3_p3wb7"]
 [ext_resource type="PackedScene" uid="uid://bfu4lj43j681i" path="res://main_game/NPC.tscn" id="4_03gfc"]
+[ext_resource type="Texture2D" uid="uid://5v6tltg18rh3" path="res://sprites/npcs/AdamIdle1.PNG" id="5_5w7a5"]
 [ext_resource type="PackedScene" uid="uid://cr5usn0g1yji0" path="res://main_game/TestEmotion.tscn" id="5_w0aw3"]
+[ext_resource type="Texture2D" uid="uid://ds1f8784ldmx" path="res://sprites/npcs/AdamIdle2.PNG" id="6_htu3c"]
+[ext_resource type="Texture2D" uid="uid://c8plwimjbf6kg" path="res://sprites/npcs/BlessIdle1.PNG" id="8_w4cjx"]
+[ext_resource type="Texture2D" uid="uid://bhdcq68bqcjd8" path="res://sprites/npcs/BlessIdle2.PNG" id="9_i6yq4"]
+[ext_resource type="Texture2D" uid="uid://cc2qkth0a5g77" path="res://sprites/npcs/Cluzz1.PNG" id="10_68l2i"]
+[ext_resource type="Texture2D" uid="uid://1iirvqroeyra" path="res://sprites/npcs/Cluzz2.PNG" id="11_4saix"]
+[ext_resource type="Texture2D" uid="uid://cg7nlocv30hfg" path="res://sprites/npcs/JustinIdle1.PNG" id="12_8trv5"]
+[ext_resource type="Texture2D" uid="uid://1b5h1shik6i" path="res://sprites/npcs/JustinIdle2.PNG" id="13_nilww"]
+[ext_resource type="Texture2D" uid="uid://deyrssr77t0by" path="res://sprites/npcs/Kat1.PNG" id="14_7qmxs"]
+[ext_resource type="Texture2D" uid="uid://cb5jmql6ceeh" path="res://sprites/npcs/Kat2.PNG" id="15_74rp2"]
+[ext_resource type="Texture2D" uid="uid://bmo5w7y7tgqyk" path="res://sprites/npcs/Nico1.PNG" id="16_rq74r"]
+[ext_resource type="Texture2D" uid="uid://h8hyoqarhvqo" path="res://sprites/npcs/Nico2.PNG" id="17_gdf83"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2pwrp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_5w7a5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_htu3c")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.5
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xrqgx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_w4cjx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_i6yq4")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.5
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b3kdp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_68l2i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_4saix")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.5
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wyxkk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_8trv5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_nilww")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.5
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dfupt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_7qmxs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_74rp2")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.5
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d6ead"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_rq74r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_gdf83")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.5
+}]
 
 [node name="MainGame" type="Node2D" unique_id=1780440313]
 script = ExtResource("1_0lykq")
@@ -20,7 +116,28 @@ position = Vector2(1886, 1878)
 player_id = 2
 
 [node name="Adam" parent="." unique_id=364730679 instance=ExtResource("4_03gfc")]
-position = Vector2(300, 300)
+position = Vector2(470, 2377)
+custom_sprite_frames = SubResource("SpriteFrames_2pwrp")
 
 [node name="TestEmotion" parent="." unique_id=1897053641 instance=ExtResource("5_w0aw3")]
 position = Vector2(500, 300)
+
+[node name="Bless" parent="." unique_id=2116983378 instance=ExtResource("4_03gfc")]
+position = Vector2(1733, 2521)
+custom_sprite_frames = SubResource("SpriteFrames_xrqgx")
+
+[node name="Cluzz" parent="." unique_id=1945537862 instance=ExtResource("4_03gfc")]
+position = Vector2(1222, 1451)
+custom_sprite_frames = SubResource("SpriteFrames_b3kdp")
+
+[node name="Justin" parent="." unique_id=583000246 instance=ExtResource("4_03gfc")]
+position = Vector2(2469, 2070)
+custom_sprite_frames = SubResource("SpriteFrames_wyxkk")
+
+[node name="Kat" parent="." unique_id=348187083 instance=ExtResource("4_03gfc")]
+position = Vector2(645, 918)
+custom_sprite_frames = SubResource("SpriteFrames_dfupt")
+
+[node name="Nico" parent="." unique_id=2089880231 instance=ExtResource("4_03gfc")]
+position = Vector2(1544, 137)
+custom_sprite_frames = SubResource("SpriteFrames_d6ead")

@@ -1,6 +1,7 @@
 extends Area2D
 
 # ==========================================
+@export var custom_sprite_frames: SpriteFrames
 @export var npc_name: String = "Mysterious Stranger"
 @export var ghost_text: String = "Press Interact to Listen"
 
@@ -55,6 +56,16 @@ var someone_talked_first: bool = false
 var is_talking: bool = false
 var active_player: Player = null 
 var players_in_range: Array[Player] = []
+
+@onready var anim = $AnimatedSprite2D
+
+func _ready() -> void:
+	# 1. Swap the sprite if you assigned a custom one in the inspector
+	if custom_sprite_frames != null:
+		anim.sprite_frames = custom_sprite_frames
+	
+	# 2. Start the idle animation automatically
+	anim.play("idle")
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is Player:
