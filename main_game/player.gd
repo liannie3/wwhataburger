@@ -15,7 +15,6 @@ class_name Player
 
 # Variable to hold the player's current emotion
 var current_emotion: EmotionData.Emotion = EmotionData.Emotion.NONE
-k
 
 func _ready() -> void:
 	# Paint the dot based on the player ID!
