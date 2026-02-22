@@ -3,7 +3,7 @@ class_name Player
 
 @export var player_id: int = 1 
 @export var base_speed: float = 400.0
-@export var dash_speed: float = 900.0
+@export var dash_speed: float = 1200.0
 
 @onready var minimap_dot = $MinimapDot
 @onready var anim = $AnimatedSprite2D
