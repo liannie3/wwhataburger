@@ -14,5 +14,5 @@ position = Vector2(0, 1)
 position = Vector2(100, 100)
 
 [node name="Player2" parent="." unique_id=77006209 instance=ExtResource("3_p3wb7")]
-position = Vector2(500, 500)
+position = Vector2(1886, 1878)
 player_id = 2
