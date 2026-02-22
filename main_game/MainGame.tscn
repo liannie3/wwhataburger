@@ -180,7 +180,7 @@ position = Vector2(1886, 1878)
 player_id = 2
 
 [node name="Adam" parent="." unique_id=364730679 instance=ExtResource("4_03gfc")]
-position = Vector2(572, 2572)
+position = Vector2(1898, 2442)
 custom_sprite_frames = SubResource("SpriteFrames_2pwrp")
 
 [node name="TestEmotion" parent="." unique_id=1897053641 instance=ExtResource("5_w0aw3")]
@@ -199,7 +199,7 @@ position = Vector2(2959, 1861)
 custom_sprite_frames = SubResource("SpriteFrames_wyxkk")
 
 [node name="Kat" parent="." unique_id=348187083 instance=ExtResource("4_03gfc")]
-position = Vector2(773, 1025)
+position = Vector2(2931, 458)
 custom_sprite_frames = SubResource("SpriteFrames_dfupt")
 
 [node name="Nico" parent="." unique_id=2089880231 instance=ExtResource("4_03gfc")]
@@ -211,11 +211,11 @@ position = Vector2(2655, 2837)
 custom_sprite_frames = SubResource("SpriteFrames_f88r1")
 
 [node name="Harsh" parent="." unique_id=512550778 instance=ExtResource("4_03gfc")]
-position = Vector2(1775, 2406)
+position = Vector2(573, 2526)
 custom_sprite_frames = SubResource("SpriteFrames_eyw1g")
 
 [node name="Niki" parent="." unique_id=715532282 instance=ExtResource("4_03gfc")]
-position = Vector2(2956, 459)
+position = Vector2(777, 1030)
 custom_sprite_frames = SubResource("SpriteFrames_p772m")
 
 [node name="Rita" parent="." unique_id=1468558610 instance=ExtResource("4_03gfc")]
