@@ -54,13 +54,15 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8hmdd"]
+size = Vector2(85, 137)
 
 [node name="Player" type="CharacterBody2D" unique_id=520688584]
 script = ExtResource("1_hqf23")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1565191249]
 sprite_frames = SubResource("SpriteFrames_ng460")
-animation = &"p2_move"
+animation = &"p1_move"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=291617828]
+position = Vector2(0.5, 4.5)
 shape = SubResource("RectangleShape2D_8hmdd")
