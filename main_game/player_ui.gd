@@ -14,12 +14,12 @@ var player_id: int = 1
 
 # Load your 6 frames here! Update the paths to match your folder.
 var bubble_frames = [
-	preload("res://assets/bubble/Text1.PNG"),
-	preload("res://assets/bubble/Text2.PNG"),
-	preload("res://assets/bubble/Text3.PNG"),
-	preload("res://assets/bubble/Text4.PNG"),
-	preload("res://assets/bubble/Text5.PNG"),
-	preload("res://assets/bubble/Text6.PNG")
+	preload("res://assets/bubble/Text1.png"),
+	preload("res://assets/bubble/Text2.png"),
+	preload("res://assets/bubble/Text3.png"),
+	preload("res://assets/bubble/Text4.png"),
+	preload("res://assets/bubble/Text5.png"),
+	preload("res://assets/bubble/Text6.png")
 ]
 
 # New State tracking!

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bf7l03yrk08mf"]
 
-[ext_resource type="Texture2D" uid="uid://cgquyk4gor31c" path="res://assets/Cafe1.PNG" id="1_i14jy"]
-[ext_resource type="Texture2D" uid="uid://8t7mkwpakti4" path="res://assets/Cafe2.PNG" id="2_fwdfh"]
+[ext_resource type="Texture2D" uid="uid://cgquyk4gor31c" path="res://assets/Cafe1.png" id="1_i14jy"]
+[ext_resource type="Texture2D" uid="uid://8t7mkwpakti4" path="res://assets/Cafe2.png" id="2_fwdfh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v8ar8"]
 size = Vector2(356, 284)

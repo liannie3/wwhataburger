@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://i658wphwtwt8"]
 
-[ext_resource type="Texture2D" uid="uid://px7ns8y0wrqn" path="res://assets/fountain.PNG" id="1_kvidj"]
-[ext_resource type="Texture2D" uid="uid://bjqtqcal65xl0" path="res://assets/fountain2.PNG" id="2_d3bf0"]
+[ext_resource type="Texture2D" uid="uid://px7ns8y0wrqn" path="res://assets/fountain.png" id="1_kvidj"]
+[ext_resource type="Texture2D" uid="uid://bjqtqcal65xl0" path="res://assets/fountain2.png" id="2_d3bf0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kvidj"]
 size = Vector2(203, 156)

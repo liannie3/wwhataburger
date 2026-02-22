@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://bfu4lj43j681i"]
 
 [ext_resource type="Script" uid="uid://dwqlp840cc25n" path="res://main_game/npc.gd" id="1_bhnok"]
-[ext_resource type="Texture2D" uid="uid://5v6tltg18rh3" path="res://sprites/npcs/AdamIdle1.PNG" id="2_1ycq1"]
-[ext_resource type="Texture2D" uid="uid://ds1f8784ldmx" path="res://sprites/npcs/AdamIdle2.PNG" id="3_v1mj6"]
+[ext_resource type="Texture2D" uid="uid://5v6tltg18rh3" path="res://sprites/npcs/AdamIdle1.png" id="2_1ycq1"]
+[ext_resource type="Texture2D" uid="uid://ds1f8784ldmx" path="res://sprites/npcs/AdamIdle2.png" id="3_v1mj6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1ycq1"]
 radius = 125.004
