@@ -24,6 +24,8 @@ func _physics_process(delta: float) -> void:
 	if direction.length() > 0:
 		# If moving, play the move animation
 		anim.play(prefix + "move")
+		if direction.x != 0:
+			anim.flip_h = direction.x > 0
 	else:
 		# If standing still, play idle
 		anim.play(prefix + "idle")
