@@ -4,9 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://gbsug7oj0630" path="res://main_game/Arena.tscn" id="2_arena"]
 [ext_resource type="PackedScene" uid="uid://bxfumbre853g0" path="res://main_game/Player.tscn" id="3_p3wb7"]
 [ext_resource type="PackedScene" uid="uid://bfu4lj43j681i" path="res://main_game/NPC.tscn" id="4_03gfc"]
-[ext_resource type="Texture2D" uid="uid://5v6tltg18rh3" path="res://sprites/npcs/AdamIdle1.png" id="5_5w7a5"]
+[ext_resource type="Texture2D" uid="uid://gg2oelvtcayd" path="res://sprites/npcs/AdamIdle1.PNG" id="5_5w7a5"]
 [ext_resource type="PackedScene" uid="uid://cr5usn0g1yji0" path="res://main_game/TestEmotion.tscn" id="5_w0aw3"]
-[ext_resource type="Texture2D" uid="uid://ds1f8784ldmx" path="res://sprites/npcs/AdamIdle2.png" id="6_htu3c"]
+[ext_resource type="Texture2D" uid="uid://ddf50mcu78omo" path="res://sprites/npcs/AdamIdle2.PNG" id="6_htu3c"]
 [ext_resource type="Texture2D" uid="uid://c8plwimjbf6kg" path="res://sprites/npcs/BlessIdle1.png" id="8_w4cjx"]
 [ext_resource type="Texture2D" uid="uid://bhdcq68bqcjd8" path="res://sprites/npcs/BlessIdle2.png" id="9_i6yq4"]
 [ext_resource type="Texture2D" uid="uid://cc2qkth0a5g77" path="res://sprites/npcs/Cluzz1.png" id="10_68l2i"]
@@ -182,6 +182,22 @@ player_id = 2
 [node name="Adam" parent="." unique_id=364730679 instance=ExtResource("4_03gfc")]
 position = Vector2(1898, 2442)
 custom_sprite_frames = SubResource("SpriteFrames_2pwrp")
+npc_name = "Adam"
+ghost_text = "Neighborhood Resident"
+p1_first_contact_dialogues = Array[String]([" Hello. My name is Adam.", "I saw Erica get angsty with the bartender for more drinks the other night. "])
+p1_first_contact_emotion = 5
+p1_first_contact_evidence = true
+p1_cold_dialogues = Array[String](["I just saw Erica. ", "I might've told him some things about you."])
+p1_cold_emotion = 1
+p1_repeat_dialogues = Array[String](["That's all I've heard. I don't know anything else."])
+p1_repeat_emotion = 0
+p2_first_contact_dialogues = Array[String](["Hello. My name is Adam. ", "At work, Bill has stopped contributing to the team. ", "I wonder what’s up with him."])
+p2_first_contact_emotion = 5
+p2_first_contact_evidence = true
+p2_cold_dialogues = Array[String](["I just saw William.", "I might've told him some things about you."])
+p2_cold_emotion = 1
+p2_repeat_dialogues = Array[String](["That's all I know. He's still a great alien."])
+p2_repeat_emotion = 0
 
 [node name="TestEmotion" parent="." unique_id=1897053641 instance=ExtResource("5_w0aw3")]
 position = Vector2(500, 300)
@@ -190,6 +206,19 @@ emotion_to_apply = 7
 [node name="Bless" parent="." unique_id=2116983378 instance=ExtResource("4_03gfc")]
 position = Vector2(1167, 2954)
 custom_sprite_frames = SubResource("SpriteFrames_xrqgx")
+npc_name = "Blessing"
+ghost_text = "Erica's favorite child"
+p1_first_contact_dialogues = Array[String](["Bill always makes that disgusting vegetable soup. I miss Erica’s cooking.", "Oh... Sorry. Didn't see you there."])
+p1_first_contact_emotion = 2
+p1_cold_dialogues = Array[String](["Oh.. Sorry. I love your cooking sometimes."])
+p1_repeat_dialogues = Array[String](["I didn't mean it, I swear."])
+p2_first_contact_dialogues = Array[String](["Bill always makes that disgusting vegetable soup. I miss Erica’s cooking.", "Oh, hey! Can you cook more?"])
+p2_first_contact_emotion = 7
+p2_first_contact_evidence = true
+p2_cold_dialogues = Array[String](["Your cooking actually tastes so much better than Bill's."])
+p2_cold_emotion = 5
+p2_repeat_dialogues = Array[String](["I'm so excited for your next dish!"])
+p2_repeat_emotion = 5
 
 [node name="Cluzz" parent="." unique_id=1945537862 instance=ExtResource("4_03gfc")]
 position = Vector2(1634, 1558)
