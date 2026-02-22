@@ -61,8 +61,14 @@ script = ExtResource("1_hqf23")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1565191249]
 sprite_frames = SubResource("SpriteFrames_ng460")
-animation = &"p1_move"
+animation = &"p2_idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=291617828]
 position = Vector2(0.5, 4.5)
 shape = SubResource("RectangleShape2D_8hmdd")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=196753851]
+limit_left = 0
+limit_top = 0
+limit_right = 2000
+limit_bottom = 2000
