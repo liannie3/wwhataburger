@@ -79,8 +79,8 @@ shape = SubResource("RectangleShape2D_8hmdd")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=196753851]
 limit_left = 0
 limit_top = 0
-limit_right = 2000
-limit_bottom = 2000
+limit_right = 3000
+limit_bottom = 3000
 
 [node name="MinimapDot" type="MeshInstance2D" parent="." unique_id=107359048]
 visibility_layer = 2
