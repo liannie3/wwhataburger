@@ -1,5 +1,8 @@
 [gd_scene format=3 uid="uid://25284xsdb06j"]
 
+[ext_resource type="Script" uid="uid://8r2e53i1tlwj" path="res://story/bad_ending.gd" id="1_y7r0e"]
+[ext_resource type="FontFile" uid="uid://bu3fgtpct0bl0" path="res://assets/PatrickHandSC-Regular.ttf" id="2_dun0q"]
+
 [node name="BadEnding" type="Control" unique_id=1995671910]
 layout_mode = 3
 anchors_preset = 15
@@ -7,3 +10,29 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_y7r0e")
+
+[node name="EndingImage" type="TextureRect" parent="." unique_id=789417742]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Punchline" type="Label" parent="." unique_id=1318938560]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_dun0q")
+theme_override_font_sizes/font_size = 50
+text = "You got the headline. But there's no one left to share it with."
+horizontal_alignment = 1
+vertical_alignment = 1
