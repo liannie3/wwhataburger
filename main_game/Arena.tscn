@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://gbsug7oj0630"]
 
+[ext_resource type="Texture2D" uid="uid://dm00oaw3as8q5" path="res://assets/background.png" id="1_a5sg1"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_top"]
 size = Vector2(2038, 20)
 
@@ -14,10 +16,12 @@ size = Vector2(20, 2000)
 
 [node name="Arena" type="Node2D" unique_id=585269906]
 
-[node name="Background" type="ColorRect" parent="." unique_id=312847291]
+[node name="Background" type="TextureRect" parent="." unique_id=702984478]
 offset_right = 2000.0
 offset_bottom = 2000.0
-color = Color(0.05729442, 0.1803374, 0.14534852, 1)
+texture = ExtResource("1_a5sg1")
+expand_mode = 1
+stretch_mode = 1
 
 [node name="WallTop" type="StaticBody2D" parent="." unique_id=423958102]
 position = Vector2(576, -10)
