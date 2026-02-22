@@ -21,14 +21,14 @@ func add_evidence(player_id: int, amount: int) -> void:
 	if player_id == 1:
 		p1_evidence += amount
 		evidence_changed.emit(1, p1_evidence)
-		if p1_evidence >= 10:
+		if p1_evidence >= 5:
 			is_game_over = true
 			# CHANGE 3: Emit the enum instead of the string!
 			game_over.emit(Ending.BAD)
 	elif player_id == 2:
 		p2_evidence += amount
 		evidence_changed.emit(2, p2_evidence)
-		if p2_evidence >= 10:
+		if p2_evidence >= 5:
 			is_game_over = true
 			# CHANGE 4: Emit the enum instead of the string!
 			game_over.emit(Ending.BAD)
