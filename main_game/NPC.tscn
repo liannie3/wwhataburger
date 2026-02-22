@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://bfu4lj43j681i"]
 
-[ext_resource type="Script" path="res://main_game/npc.gd" id="1_bhnok"]
+[ext_resource type="Script" uid="uid://dwqlp840cc25n" path="res://main_game/npc.gd" id="1_bhnok"]
 [ext_resource type="Texture2D" uid="uid://5v6tltg18rh3" path="res://sprites/npcs/AdamIdle1.PNG" id="2_1ycq1"]
 [ext_resource type="Texture2D" uid="uid://ds1f8784ldmx" path="res://sprites/npcs/AdamIdle2.PNG" id="3_v1mj6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1ycq1"]
-radius = 88.362885
+radius = 125.004
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6lush"]
 animations = [{
@@ -21,6 +21,9 @@ animations = [{
 "speed": 2.5
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ycq1"]
+size = Vector2(58, 103)
+
 [node name="Npc" type="Area2D" unique_id=364730679]
 script = ExtResource("1_bhnok")
 
@@ -31,7 +34,13 @@ shape = SubResource("CircleShape2D_1ycq1")
 sprite_frames = SubResource("SpriteFrames_6lush")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.13301574
+frame_progress = 0.94893026
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=673831786]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1872038136]
+position = Vector2(1, 3.5)
+shape = SubResource("RectangleShape2D_1ycq1")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

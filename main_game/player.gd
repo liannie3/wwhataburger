@@ -8,8 +8,14 @@ class_name Player
 @onready var minimap_dot = $MinimapDot
 @onready var anim = $AnimatedSprite2D
 
+@onready var ghost_prompt = $CanvasLayer/GhostPrompt
+@onready var dialogue_box = $CanvasLayer/DialogueBox
+@onready var name_label = $CanvasLayer/DialogueBox/HBoxContainer/VBoxContainer/NameLabel
+@onready var text_label = $CanvasLayer/DialogueBox/HBoxContainer/VBoxContainer/TextLabel
+
 # Variable to hold the player's current emotion
 var current_emotion: EmotionData.Emotion = EmotionData.Emotion.NONE
+k
 
 func _ready() -> void:
 	# Paint the dot based on the player ID!
@@ -70,3 +76,19 @@ func _on_emotion_changed(id: int, emotion: EmotionData.Emotion) -> void:
 
 func _get_facing_direction() -> Vector2:
 	return Vector2.LEFT if anim.flip_h else Vector2.RIGHT
+		
+func show_prompt(text: String):
+	ghost_prompt.text = text
+	ghost_prompt.show()
+
+func hide_prompt():
+	ghost_prompt.hide()
+
+func show_dialogue(npc_name: String, dialogue: String):
+	hide_prompt() # Hide the ghost text while talking
+	name_label.text = npc_name
+	text_label.text = dialogue
+	dialogue_box.show()
+
+func hide_dialogue():
+	dialogue_box.hide()

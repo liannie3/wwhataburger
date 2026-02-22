@@ -19,7 +19,7 @@ position = Vector2(100, 100)
 position = Vector2(1886, 1878)
 player_id = 2
 
-[node name="Npc" parent="." unique_id=364730679 instance=ExtResource("4_03gfc")]
+[node name="Adam" parent="." unique_id=364730679 instance=ExtResource("4_03gfc")]
 position = Vector2(300, 300)
 
 [node name="TestEmotion" parent="." unique_id=1897053641 instance=ExtResource("5_w0aw3")]
