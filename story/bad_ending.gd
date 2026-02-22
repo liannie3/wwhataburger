@@ -5,8 +5,8 @@ extends Control
 @onready var replay_button = $ReplayButton
 
 # Load the specific victory images for each player
-var p1_win_image = preload("res://assets/bad_ending_zill.png")
-var p2_win_image = preload("res://assets/bad_ending_zerica.png")
+var p1_win_image = preload("res://assets/bad_ending_zerica.png")
+var p2_win_image = preload("res://assets/bad_ending_zill.png")
 
 func _ready() -> void:
 	# 1. Hide the text and button instantly
