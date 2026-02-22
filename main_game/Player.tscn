@@ -14,7 +14,7 @@ animations = [{
 "texture": ExtResource("3_o5nb7")
 }],
 "loop": true,
-"name": &"idle",
+"name": &"p1_idle",
 "speed": 5.0
 }, {
 "frames": [{
@@ -25,7 +25,7 @@ animations = [{
 "texture": ExtResource("3_o5nb7")
 }],
 "loop": true,
-"name": &"move",
+"name": &"p1_move",
 "speed": 5.0
 }]
 
@@ -36,7 +36,7 @@ script = ExtResource("1_hqf23")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1565191249]
 sprite_frames = SubResource("SpriteFrames_ng460")
-animation = &"move"
+animation = &"p1_move"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=291617828]
 shape = SubResource("RectangleShape2D_8hmdd")
