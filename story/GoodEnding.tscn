@@ -1,5 +1,8 @@
 [gd_scene format=3 uid="uid://c5rer4pgtspkw"]
 
+[ext_resource type="Texture2D" uid="uid://c8elbahkrds4m" path="res://assets/good_end.png" id="1_syncp"]
+[ext_resource type="Script" uid="uid://dwp10dadgv3w7" path="res://story/good_ending.gd" id="1_ugi3j"]
+
 [node name="GoodEnding" type="Control" unique_id=43269753]
 layout_mode = 3
 anchors_preset = 15
@@ -7,3 +10,54 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_ugi3j")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1489017686]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_syncp")
+expand_mode = 1
+
+[node name="DialogueMargin" type="MarginContainer" parent="." unique_id=248846816]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -27.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 0
+
+[node name="BubbleBG" type="TextureRect" parent="DialogueMargin" unique_id=2018619749]
+custom_minimum_size = Vector2(0, 250)
+layout_mode = 2
+
+[node name="TextPadding" type="MarginContainer" parent="DialogueMargin/BubbleBG" unique_id=233622748]
+layout_mode = 0
+offset_right = 1220.0
+offset_bottom = 27.0
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 160
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DialogueMargin/BubbleBG/TextPadding" unique_id=2095630725]
+layout_mode = 2
+
+[node name="NameLabel" type="Label" parent="DialogueMargin/BubbleBG/TextPadding/VBoxContainer" unique_id=292105567]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+
+[node name="TextLabel" type="RichTextLabel" parent="DialogueMargin/BubbleBG/TextPadding/VBoxContainer" unique_id=1140711624]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 32
+fit_content = true
