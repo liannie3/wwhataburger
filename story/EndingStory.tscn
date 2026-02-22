@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://cc3bbxsu2jbpp"]
-
-[ext_resource type="Script" uid="uid://cu7r6q7ydswpx" path="res://story/ending_story.gd" id="1_yabl4"]
-
-[node name="EndingStory" type="Node2D" unique_id=1207908655]
-script = ExtResource("1_yabl4")
