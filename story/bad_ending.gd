@@ -2,14 +2,17 @@ extends Control
 
 @onready var ending_image = $EndingImage
 @onready var punchline = $Punchline
+@onready var replay_button = $ReplayButton
 
 # Load the specific victory images for each player
 var p1_win_image = preload("res://assets/bad_ending_zill.png")
 var p2_win_image = preload("res://assets/bad_ending_zerica.png")
 
 func _ready() -> void:
-	# 1. Hide the text instantly
-	punchline.modulate.a = 0.0 
+	# 1. Hide the text and button instantly
+	punchline.modulate.a = 0.0
+	replay_button.modulate.a = 0.0
+	replay_button.pressed.connect(_on_replay_pressed)
 	
 	# 2. Check the Autoload to see who actually triggered the ending!
 	if GlobalStats.p1_evidence > GlobalStats.p2_evidence:
@@ -31,11 +34,15 @@ func _play_cinematic() -> void:
 	# Wait for the fade animation to fully finish
 	await tween.finished
 	
-	# Let the tragic text sit on the screen for 5 more seconds so they can read it
-	await get_tree().create_timer(7.0).timeout
-	
-	# Optional: Reset stats before going to the menu so the next game starts fresh!
-	GlobalStats.reset_stats() 
-	
-	# Kick them back to the Main Menu
-	get_tree().change_scene_to_file("res://menu/MainMenu.tscn")
+	# Fade in the replay button
+	await get_tree().create_timer(2.0).timeout
+	var button_tween = create_tween()
+	button_tween.tween_property(replay_button, "modulate:a", 1.0, 1)
+
+func _on_replay_pressed() -> void:
+	GlobalStats.reset()
+	var game_manager = get_tree().root.get_child(get_tree().root.get_child_count() - 1)
+	if game_manager.has_method("load_scene_from_path"):
+		game_manager.load_scene_from_path("res://main_game/SpitScreen.tscn")
+	else:
+		get_tree().change_scene_to_file("res://main_game/SpitScreen.tscn")
