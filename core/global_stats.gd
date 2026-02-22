@@ -14,7 +14,7 @@ var p1_evidence: int = 0
 var p2_evidence: int = 0
 var is_game_over: bool = false
 var playthrough_count: int = 0
-var evidence_threshold: int = 1
+var evidence_threshold: int = 2
 
 func add_evidence(player_id: int, amount: int) -> void:
 	if is_game_over: return
@@ -26,7 +26,6 @@ func add_evidence(player_id: int, amount: int) -> void:
 			is_game_over = true
 			# CHANGE 3: Emit the enum instead of the string!
 			game_over.emit(Ending.BAD)
-			print("Hello")
 	elif player_id == 2:
 		p2_evidence += amount
 		evidence_changed.emit(2, p2_evidence)
@@ -37,6 +36,7 @@ func add_evidence(player_id: int, amount: int) -> void:
 
 func reset() -> void:
 	playthrough_count += 1
+	is_game_over = false
 	p1_evidence = 0
 	p2_evidence = 0
 	evidence_changed.emit(1, 0)

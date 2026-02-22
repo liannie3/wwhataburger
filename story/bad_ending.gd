@@ -22,17 +22,17 @@ func _ready() -> void:
 
 func _play_cinematic() -> void:
 	# Wait for 5 seconds with just the tragic image on screen
-	await get_tree().create_timer(5.0).timeout
+	await get_tree().create_timer(2).timeout
 	
 	# Fade the text in over 3 seconds (while the image remains!)
 	var tween = create_tween()
-	tween.tween_property(punchline, "modulate:a", 1.0, 3.0) 
+	tween.tween_property(punchline, "modulate:a", 1.0, 1) 
 	
 	# Wait for the fade animation to fully finish
 	await tween.finished
 	
 	# Let the tragic text sit on the screen for 5 more seconds so they can read it
-	await get_tree().create_timer(5.0).timeout
+	await get_tree().create_timer(7.0).timeout
 	
 	# Optional: Reset stats before going to the menu so the next game starts fresh!
 	GlobalStats.reset_stats() 
