@@ -27,7 +27,15 @@ offset_bottom = 81.0
 [node name="EvidenceLabel" type="Label" parent="Control/VBoxContainer" unique_id=738955444]
 layout_mode = 2
 
-[node name="EmotionLabel" type="Label" parent="Control/VBoxContainer" unique_id=1736996198]
+[node name="EmotionRow" type="HBoxContainer" parent="Control/VBoxContainer"]
+layout_mode = 2
+
+[node name="EmotionIcon" type="TextureRect" parent="Control/VBoxContainer/EmotionRow" unique_id=1736996198]
+layout_mode = 2
+stretch_mode = 5
+custom_minimum_size = Vector2(64, 64)
+
+[node name="EmotionLabel" type="Label" parent="Control/VBoxContainer/EmotionRow"]
 layout_mode = 2
 
 [node name="DurationBar" type="ProgressBar" parent="Control/VBoxContainer" unique_id=1663121440]

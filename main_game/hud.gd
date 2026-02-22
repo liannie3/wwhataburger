@@ -6,7 +6,9 @@ extends CanvasLayer
 @onready var main_ui_container: VBoxContainer = $Control/VBoxContainer
 @onready var main_control: Control = $Control
 @onready var evidence_label: Label = $Control/VBoxContainer/EvidenceLabel
-@onready var emotion_label: Label = $Control/VBoxContainer/EmotionLabel
+@onready var emotion_icon: TextureRect = $Control/VBoxContainer/EmotionRow/EmotionIcon
+@onready var emotion_label: Label = $Control/VBoxContainer/EmotionRow/EmotionLabel
+@onready var emotion_row: HBoxContainer = $Control/VBoxContainer/EmotionRow
 @onready var duration_bar: ProgressBar = $Control/VBoxContainer/DurationBar
 
 func _ready() -> void:
@@ -40,17 +42,41 @@ func _on_evidence_changed(changed_player_id: int, new_amount: int) -> void:
 
 # --- UI Updaters ---
 
+const EMOTION_EFFECTS := {
+	EmotionData.Emotion.ANGER:      "Anger\nMove faster",
+	EmotionData.Emotion.SADNESS:    "Sadness\nMove slower",
+	EmotionData.Emotion.FEAR:       "Fear\nControls are reversed",
+	EmotionData.Emotion.LONELINESS: "Loneliness\nCamera zooms in",
+	EmotionData.Emotion.JOY:        "Joy\nDouble tap a direction to dash",
+	EmotionData.Emotion.NERVOUS:    "Nervous\nMovement is slippery",
+	EmotionData.Emotion.GRATEFUL:   "Grateful\nCamera zooms out",
+}
+
+const EMOTION_ICONS := {
+	EmotionData.Emotion.ANGER:      ["AlienAngry",    "BlooberMad"],
+	EmotionData.Emotion.SADNESS:    ["AlienSad",      "BlooberSad"],
+	EmotionData.Emotion.FEAR:       ["AlienFear",     "BlooberFear"],
+	EmotionData.Emotion.LONELINESS: ["AlienLonely",   "BlooberLonely"],
+	EmotionData.Emotion.JOY:        ["AlienJoy",      "BlooberJoy"],
+	EmotionData.Emotion.NERVOUS:    ["AlienNervous",  "BlooberNervous"],
+	EmotionData.Emotion.GRATEFUL:   ["AlienGrateful", "BlooberGrateful"],
+}
+
 func _update_emotion_display(emotion: EmotionData.Emotion) -> void:
 	if emotion == EmotionData.Emotion.NONE:
-		# Hide the bar completely when there is no emotion
 		duration_bar.visible = false
+		emotion_row.visible = false
 	else:
-		# Show the bar and safely set the max_value
 		duration_bar.visible = true
+		emotion_row.visible = true
 		var duration: float = EmotionData.get_duration(emotion)
-		# Use max() to guarantee max_value is never 0, preventing UI glitches
 		duration_bar.max_value = max(duration, 0.01)
-	emotion_label.text = "Emotion: " + str(emotion) 
+		var names: Array = EMOTION_ICONS.get(emotion, [])
+		if names.size() > 0:
+			var idx := 0 if player_id == 1 else 1
+			var path := "res://assets/emotions/%s.png" % names[idx]
+			emotion_icon.texture = load(path)
+		emotion_label.text = EMOTION_EFFECTS.get(emotion, "")
 
 func _update_evidence_display(amount: int) -> void:
 	evidence_label.text = "Evidence: " + str(amount)
