@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dorxl8envqj2i" path="res://main_game/obstacles/FlowerA.tscn" id="6_mc12f"]
 [ext_resource type="PackedScene" uid="uid://dpow1lxvymt8" path="res://main_game/obstacles/FlowerB.tscn" id="7_q0pqe"]
 [ext_resource type="PackedScene" uid="uid://b8gb3d3equhqb" path="res://main_game/obstacles/Observatory.tscn" id="8_q0pqe"]
+[ext_resource type="PackedScene" uid="uid://bldynoxdvepvu" path="res://main_game/obstacles/Zats.tscn" id="9_ydjxy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_top"]
 size = Vector2(3053, 20)
@@ -99,3 +100,6 @@ position = Vector2(1894, 1818)
 
 [node name="FlowerA7" parent="." unique_id=2056467986 instance=ExtResource("7_q0pqe")]
 position = Vector2(2797, 457)
+
+[node name="Zats" parent="." unique_id=359705304 instance=ExtResource("9_ydjxy")]
+position = Vector2(2592, 627)
