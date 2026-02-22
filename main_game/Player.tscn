@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://btyjk4pnj7pyg" path="res://main_game/player.gd" id="1_hqf23"]
 [ext_resource type="Texture2D" uid="uid://dyxoe3gjn71x1" path="res://sprites/player/AlienIdle1.PNG" id="2_r21c5"]
 [ext_resource type="Texture2D" uid="uid://kf71oh523g47" path="res://sprites/player/AlienIdle2.PNG" id="3_o5nb7"]
+[ext_resource type="Texture2D" uid="uid://c7jqeyraqxo6n" path="res://sprites/player/BlooberIdle1.PNG" id="4_ng460"]
+[ext_resource type="Texture2D" uid="uid://cidcnqt7okqk2" path="res://sprites/player/BlooberIdle2.PNG" id="5_8hmdd"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ng460"]
 animations = [{
@@ -27,6 +29,28 @@ animations = [{
 "loop": true,
 "name": &"p1_move",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_ng460")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_8hmdd")
+}],
+"loop": true,
+"name": &"p2_idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_ng460")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_8hmdd")
+}],
+"loop": true,
+"name": &"p2_move",
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8hmdd"]
@@ -36,7 +60,7 @@ script = ExtResource("1_hqf23")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1565191249]
 sprite_frames = SubResource("SpriteFrames_ng460")
-animation = &"p1_move"
+animation = &"p2_move"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=291617828]
 shape = SubResource("RectangleShape2D_8hmdd")
