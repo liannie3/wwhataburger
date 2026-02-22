@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://masgguh4jref"]
 
-[node name="Player" type="Node2D" unique_id=1076548714]
+[ext_resource type="Script" uid="uid://btyjk4pnj7pyg" path="res://main_game/player.gd" id="1_hqf23"]
+
+[node name="Player" type="CharacterBody2D" unique_id=520688584]
+script = ExtResource("1_hqf23")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1565191249]
 
