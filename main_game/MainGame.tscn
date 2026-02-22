@@ -106,7 +106,7 @@ animations = [{
 script = ExtResource("1_0lykq")
 
 [node name="Arena" parent="." unique_id=678867647 instance=ExtResource("2_arena")]
-position = Vector2(0, 1)
+position = Vector2(1, 1)
 
 [node name="Player" parent="." unique_id=520688584 instance=ExtResource("3_p3wb7")]
 position = Vector2(100, 100)
@@ -116,28 +116,28 @@ position = Vector2(1886, 1878)
 player_id = 2
 
 [node name="Adam" parent="." unique_id=364730679 instance=ExtResource("4_03gfc")]
-position = Vector2(470, 2377)
+position = Vector2(572, 2572)
 custom_sprite_frames = SubResource("SpriteFrames_2pwrp")
 
 [node name="TestEmotion" parent="." unique_id=1897053641 instance=ExtResource("5_w0aw3")]
 position = Vector2(500, 300)
 
 [node name="Bless" parent="." unique_id=2116983378 instance=ExtResource("4_03gfc")]
-position = Vector2(1733, 2521)
+position = Vector2(1167, 2954)
 custom_sprite_frames = SubResource("SpriteFrames_xrqgx")
 
 [node name="Cluzz" parent="." unique_id=1945537862 instance=ExtResource("4_03gfc")]
-position = Vector2(1222, 1451)
+position = Vector2(1634, 1558)
 custom_sprite_frames = SubResource("SpriteFrames_b3kdp")
 
 [node name="Justin" parent="." unique_id=583000246 instance=ExtResource("4_03gfc")]
-position = Vector2(2469, 2070)
+position = Vector2(2959, 1861)
 custom_sprite_frames = SubResource("SpriteFrames_wyxkk")
 
 [node name="Kat" parent="." unique_id=348187083 instance=ExtResource("4_03gfc")]
-position = Vector2(645, 918)
+position = Vector2(773, 1025)
 custom_sprite_frames = SubResource("SpriteFrames_dfupt")
 
 [node name="Nico" parent="." unique_id=2089880231 instance=ExtResource("4_03gfc")]
-position = Vector2(1544, 137)
+position = Vector2(1340, 311)
 custom_sprite_frames = SubResource("SpriteFrames_d6ead")
