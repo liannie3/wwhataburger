@@ -1,7 +1,9 @@
 extends CharacterBody2D
 
 @export var player_id: int = 1 
-var speed: float = 300.0
+@export var speed: float = 300.0
+
+@onready var anim = $AnimatedSprite2D
 
 func _physics_process(delta: float) -> void:
 	# 1. Build the action strings dynamically based on the player_id
@@ -17,3 +19,14 @@ func _physics_process(delta: float) -> void:
 	# 3. Apply the movement
 	velocity = direction * speed
 	move_and_slide()
+	
+	if direction.length() > 0:
+		# If moving, play the move animation
+		anim.play("move")
+		
+		# Flip the sprite left or right depending on the X direction
+		if direction.x != 0:
+			anim.flip_h = direction.x < 0 
+	else:
+		# If standing still, play idle
+		anim.play("idle")
