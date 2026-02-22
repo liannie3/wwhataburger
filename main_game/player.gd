@@ -13,6 +13,8 @@ class_name Player
 @onready var name_label = $CanvasLayer/DialogueBox/HBoxContainer/VBoxContainer/NameLabel
 @onready var text_label = $CanvasLayer/DialogueBox/HBoxContainer/VBoxContainer/TextLabel
 
+@onready var stats_label = $CanvasLayer/HUD/VBoxContainer/StatsLabel
+
 # Variable to hold the player's current emotion
 var current_emotion: EmotionData.Emotion = EmotionData.Emotion.NONE
 
@@ -26,6 +28,17 @@ func _ready() -> void:
 	# Connect to the EmotionManager to listen for changes, and grab the starting state
 	EmotionManager.emotion_changed.connect(_on_emotion_changed)
 	current_emotion = EmotionManager.get_emotion(player_id)
+	if player_id == 1:
+		stats_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_LEFT
+	else:
+		stats_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
+
+func _process(delta: float) -> void:
+	# Continuously pull the latest stats from the Autoload
+	if player_id == 1:
+		stats_label.text = "First Talks: " + str(GlobalStats.p1_first_talks)
+	else:
+		stats_label.text = "First Talks: " + str(GlobalStats.p2_first_talks)
 
 func _physics_process(delta: float) -> void:
 	var prefix = "p" + str(player_id) + "_"
@@ -54,9 +67,9 @@ func _physics_process(delta: float) -> void:
 		velocity = target_velocity
 		
 	# EMOTION MODIFIER: Dash (Fear)
-	if Input.is_action_just_pressed(dash) and EmotionData.has_dash(current_emotion):
-		var dash_dir = direction if direction != Vector2.ZERO else _get_facing_direction()
-		velocity = dash_dir * dash_speed
+	#if Input.is_action_just_pressed(dash) and EmotionData.has_dash(current_emotion):
+	#	var dash_dir = direction if direction != Vector2.ZERO else _get_facing_direction()
+	#	velocity = dash_dir * dash_speed
 
 	move_and_slide()
 	
