@@ -41,3 +41,23 @@ stretch = true
 handle_input_locally = false
 size = Vector2i(638, 720)
 render_target_update_mode = 4
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=112051585]
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer" unique_id=918142653]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer/CenterContainer" unique_id=307514615]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 2
+
+[node name="SubViewport" type="SubViewport" parent="CanvasLayer/CenterContainer/SubViewportContainer" unique_id=1062316975]
+size = Vector2i(300, 300)
+
+[node name="Camera2D" type="Camera2D" parent="CanvasLayer/CenterContainer/SubViewportContainer/SubViewport" unique_id=1560877012]
+position = Vector2(1000, 1000)
+zoom = Vector2(0.15, 0.15)
