@@ -90,7 +90,7 @@ func _input(event: InputEvent) -> void:
 			dialogue_index += 1
 
 			if dialogue_index < current_dialogues.size():
-				player.show_dialogue(npc_name, current_dialogues[dialogue_index])
+				EventBus.show_dialogue.emit(player.player_id, npc_name, current_dialogues[dialogue_index])
 			else:
 				end_interaction()
 			return
