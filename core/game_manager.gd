@@ -6,6 +6,7 @@ extends Node
 var progression_sequence: Array[String] = [
 	"res://menu/MainMenu.tscn",
 	"res://story/OpeningStory.tscn",
+	"res://main_game/MainGame.tscn",
 	"res://story/EndingStory.tscn"
 ]
 
