@@ -17,7 +17,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"p1_idle",
-"speed": 5.0
+"speed": 2.5
 }, {
 "frames": [{
 "duration": 1.0,
@@ -28,7 +28,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"p1_move",
-"speed": 5.0
+"speed": 2.5
 }, {
 "frames": [{
 "duration": 1.0,
@@ -39,7 +39,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"p2_idle",
-"speed": 5.0
+"speed": 2.5
 }, {
 "frames": [{
 "duration": 1.0,
@@ -50,7 +50,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"p2_move",
-"speed": 5.0
+"speed": 2.5
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8hmdd"]
@@ -61,7 +61,7 @@ script = ExtResource("1_hqf23")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1565191249]
 sprite_frames = SubResource("SpriteFrames_ng460")
-animation = &"p2_idle"
+animation = &"p2_move"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=291617828]
 position = Vector2(0.5, 4.5)
