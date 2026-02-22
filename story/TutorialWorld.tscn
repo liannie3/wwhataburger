@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://dettq63s8kvdy"]
+
+[ext_resource type="PackedScene" uid="uid://bxfumbre853g0" path="res://main_game/Player.tscn" id="1_phyug"]
+[ext_resource type="PackedScene" uid="uid://bfu4lj43j681i" path="res://main_game/NPC.tscn" id="2_gtrnf"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_6uypk"]
+
+[node name="TutorialWorld" type="Node2D" unique_id=1869546143]
+
+[node name="TutorialArena" type="Node2D" parent="." unique_id=1080438027]
+
+[node name="Background" type="ColorRect" parent="TutorialArena" unique_id=261509979]
+custom_minimum_size = Vector2(800, 600)
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.33452803, 0.11573585, 0.030316453, 1)
+
+[node name="Up" type="StaticBody2D" parent="TutorialArena" unique_id=731912851]
+position = Vector2(400, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TutorialArena/Up" unique_id=369825856]
+rotation = 3.1415927
+shape = SubResource("WorldBoundaryShape2D_6uypk")
+
+[node name="Down" type="StaticBody2D" parent="TutorialArena" unique_id=512958210]
+position = Vector2(400, 600)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TutorialArena/Down" unique_id=363421196]
+shape = SubResource("WorldBoundaryShape2D_6uypk")
+
+[node name="Right" type="StaticBody2D" parent="TutorialArena" unique_id=1520774248]
+position = Vector2(800, 300)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TutorialArena/Right" unique_id=384990502]
+rotation = -1.5707964
+shape = SubResource("WorldBoundaryShape2D_6uypk")
+
+[node name="Left" type="StaticBody2D" parent="TutorialArena" unique_id=54443032]
+position = Vector2(0, 300)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TutorialArena/Left" unique_id=420577376]
+rotation = 1.5707964
+shape = SubResource("WorldBoundaryShape2D_6uypk")
+
+[node name="Player" parent="." unique_id=520688584 instance=ExtResource("1_phyug")]
+position = Vector2(150, 300)
+
+[node name="Player2" parent="." unique_id=600895687 instance=ExtResource("1_phyug")]
+position = Vector2(650, 300)
+player_id = 2
+
+[node name="TutorialNpc" parent="." unique_id=364730679 instance=ExtResource("2_gtrnf")]
+position = Vector2(400, 150)
+npc_name = "Tutorial Guide"
+ghost_text = "Interact! P1: (e, f) P2: (h, u, /)"
+p1_first_contact_dialogues = Array[String](["Welcome! You just interacted with me! Use space to end the interaction."])
+p1_cold_dialogues = Array[String](["Looks like Player 2 already interacted with me! Try interacting again!"])
+p1_repeat_dialogues = Array[String](["I have a few pages now, use space to continue!", "Here you go, some evidence to use in your hit piece on player 2"])
+p1_repeat_emotion = 5
+p1_repeat_evidence = true
+p2_first_contact_dialogues = Array[String](["Welcome! You just interacted with me! Use Enter to continue!"])
+p2_first_contact_emotion = 1
+p2_cold_dialogues = Array[String](["Looks like Player 1 got to me first! Try interacting again!"])
+p2_repeat_dialogues = Array[String](["I have a few pages, use enter to continue!", "Here you go, some evidence to use in your hit piece on player 1"])
+p2_repeat_emotion = 5
+p2_repeat_evidence = true

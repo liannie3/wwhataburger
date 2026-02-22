@@ -1,12 +1,14 @@
-extends Node2D
+extends Control
 
 signal sequence_finished
 
-# Called when the node enters the scene tree for the first time.
+@onready var tutorial_split_screen = $SpitScreen
+
 func _ready() -> void:
-	pass # Replace with function body.
+	tutorial_split_screen.tutorial_finished.connect(_on_tutorial_finished)
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _on_tutorial_finished() -> void:
+	GlobalStats.reset()
+	EmotionManager.set_emotion(1, EmotionData.Emotion.NONE)
+	EmotionManager.set_emotion(2, EmotionData.Emotion.NONE)
+	sequence_finished.emit()

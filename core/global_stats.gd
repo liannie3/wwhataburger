@@ -31,6 +31,14 @@ func add_evidence(player_id: int, amount: int) -> void:
 			# CHANGE 4: Emit the enum instead of the string!
 			game_over.emit(Ending.BAD)
 
+func reset() -> void:
+	p1_evidence = 0
+	p2_evidence = 0
+	evidence_changed.emit(1, 0)
+	evidence_changed.emit(2, 0)
+	p1_first_talks = 0
+	p2_first_talks = 0
+
 var p1_first_talks: int = 0:
 	set(value):
 		p1_first_talks = value

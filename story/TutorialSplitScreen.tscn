@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://b20oonvys5un1"]
+
+[ext_resource type="Script" uid="uid://cgcay7f7pim7i" path="res://story/tutorial_split_screen.gd" id="1_hil5a"]
+[ext_resource type="PackedScene" uid="uid://dettq63s8kvdy" path="res://story/TutorialWorld.tscn" id="3_hil5a"]
+[ext_resource type="PackedScene" uid="uid://bhk45cagwg42x" path="res://main_game/HUD.tscn" id="3_lj5cs"]
+[ext_resource type="Script" uid="uid://dk5wrccx5pmay" path="res://story/tutorial_world.gd" id="4_sxcwt"]
+
+[node name="SpitScreen" type="Control" unique_id=498784060]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hil5a")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=302217450]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="HBoxContainer" unique_id=242427524]
+layout_mode = 2
+size_flags_horizontal = 3
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="HBoxContainer/SubViewportContainer" unique_id=994697696]
+handle_input_locally = false
+canvas_cull_mask = 4294967293
+size = Vector2i(638, 720)
+render_target_update_mode = 4
+
+[node name="Hud" parent="HBoxContainer/SubViewportContainer/SubViewport" unique_id=269710828 instance=ExtResource("3_lj5cs")]
+offset = Vector2(0, -30)
+transform = Transform2D(1, 0, 0, 1, 0, -30)
+
+[node name="TutorialWorld" parent="HBoxContainer/SubViewportContainer/SubViewport" unique_id=1869546143 instance=ExtResource("3_hil5a")]
+script = ExtResource("4_sxcwt")
+
+[node name="SubViewportContainer2" type="SubViewportContainer" parent="HBoxContainer" unique_id=528254201]
+layout_mode = 2
+size_flags_horizontal = 3
+stretch = true
+
+[node name="SubViewport2" type="SubViewport" parent="HBoxContainer/SubViewportContainer2" unique_id=1197239889]
+handle_input_locally = false
+canvas_cull_mask = 4294967293
+size = Vector2i(638, 720)
+render_target_update_mode = 4
+
+[node name="Hud" parent="HBoxContainer/SubViewportContainer2/SubViewport2" unique_id=190957759 instance=ExtResource("3_lj5cs")]
+offset = Vector2(-30, 0)
+transform = Transform2D(1, 0, 0, 1, -30, 0)
+player_id = 2

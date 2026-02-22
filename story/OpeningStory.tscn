@@ -1,6 +1,12 @@
 [gd_scene format=3 uid="uid://yjmfxr4ag3c4"]
 
 [ext_resource type="Script" uid="uid://ctv1x3o6wg3sl" path="res://story/opening_story.gd" id="1_101ob"]
+[ext_resource type="PackedScene" uid="uid://b20oonvys5un1" path="res://story/TutorialSplitScreen.tscn" id="2_2i77p"]
 
-[node name="OpeningStory" type="Node2D" unique_id=184825772]
+[node name="OpeningStory" type="Control" unique_id=399780607]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_101ob")
+
+[node name="SpitScreen" parent="." unique_id=498784060 instance=ExtResource("2_2i77p")]
+layout_mode = 1
