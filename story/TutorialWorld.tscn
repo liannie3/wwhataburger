@@ -13,7 +13,7 @@
 custom_minimum_size = Vector2(800, 600)
 offset_right = 40.0
 offset_bottom = 40.0
-color = Color(0.33452803, 0.11573585, 0.030316453, 1)
+color = Color(0.32, 0.34, 0.36, 1)
 
 [node name="Up" type="StaticBody2D" parent="TutorialArena" unique_id=731912851]
 position = Vector2(400, 0)
