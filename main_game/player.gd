@@ -7,7 +7,7 @@ extends CharacterBody2D
 
 func _physics_process(delta: float) -> void:
 	# 1. Build the action strings dynamically based on the player_id
-	# If player_id is 1, this becomes "p1_up". If it's 2, it becomes "p2_up".
+	# If player_id is 1, this becomes "p1_up". If i2t's 2, it becomes "p2_up".
 	var prefix = "p" + str(player_id) + "_"
 	var up = prefix + "up"
 	var down = prefix + "down"
