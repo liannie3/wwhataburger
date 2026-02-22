@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bfu4lj43j681i"]
+
+[ext_resource type="Script" uid="uid://dwqlp840cc25n" path="res://main_game/npc.gd" id="1_bhnok"]
+[ext_resource type="Texture2D" uid="uid://cegv6k7a1tptd" path="res://sprites/player/BlooberIdle1.png" id="2_w0qom"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1ycq1"]
+radius = 88.362885
+
+[node name="Npc" type="Area2D" unique_id=364730679]
+script = ExtResource("1_bhnok")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=997920180]
+texture = ExtResource("2_w0qom")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2023502016]
+shape = SubResource("CircleShape2D_1ycq1")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

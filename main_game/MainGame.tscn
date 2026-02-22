@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dn0rqb5ao5m7m" path="res://main_game/main_game.gd" id="1_0lykq"]
 [ext_resource type="PackedScene" uid="uid://gbsug7oj0630" path="res://main_game/Arena.tscn" id="2_arena"]
 [ext_resource type="PackedScene" uid="uid://bxfumbre853g0" path="res://main_game/Player.tscn" id="3_p3wb7"]
+[ext_resource type="PackedScene" uid="uid://bfu4lj43j681i" path="res://main_game/NPC.tscn" id="4_03gfc"]
 
 [node name="MainGame" type="Node2D" unique_id=1780440313]
 script = ExtResource("1_0lykq")
@@ -16,3 +17,6 @@ position = Vector2(100, 100)
 [node name="Player2" parent="." unique_id=77006209 instance=ExtResource("3_p3wb7")]
 position = Vector2(1886, 1878)
 player_id = 2
+
+[node name="Npc" parent="." unique_id=364730679 instance=ExtResource("4_03gfc")]
+position = Vector2(300, 300)
