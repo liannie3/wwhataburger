@@ -35,3 +35,8 @@ func _get_or_create_timer(player_id: int) -> Timer:
 
 func _on_emotion_expired(player_id: int) -> void:
 	set_emotion(player_id, EmotionData.Emotion.NONE)
+
+func get_emotion_time_left(player_id: int) -> float:
+	if _timers.has(player_id) and not _timers[player_id].is_stopped():
+		return _timers[player_id].time_left
+	return 0.0

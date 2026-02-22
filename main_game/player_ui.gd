@@ -3,7 +3,6 @@ extends CanvasLayer
 var player_id: int = 1 
 
 @onready var ghost_prompt = $GhostPrompt
-@onready var stats_label = $HUD/VBoxContainer/StatsLabel
 
 # New UI References
 @onready var dialogue_margin = $DialogueMargin
@@ -32,14 +31,6 @@ func _ready() -> void:
 	EventBus.hide_prompt.connect(_on_hide_prompt)
 	EventBus.show_dialogue.connect(_on_show_dialogue)
 	EventBus.hide_dialogue.connect(_on_hide_dialogue)
-	GlobalStats.stat_changed.connect(_on_stat_changed)
-	
-	if player_id == 1:
-		stats_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_LEFT
-		stats_label.text = "First Talks: " + str(GlobalStats.p1_first_talks)
-	else:
-		stats_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
-		stats_label.text = "First Talks: " + str(GlobalStats.p2_first_talks)
 
 
 # --- DIALOGUE ANIMATION LOGIC ---
@@ -107,10 +98,6 @@ func close_bubble():
 	dialogue_margin.hide() 
 	bubble_state = "closed"
 
-# --- OTHER LISTENERS ---
-func _on_stat_changed(id: int, stat_name: String, new_value: int) -> void:
-	if id == player_id and stat_name == "first_talks":
-		stats_label.text = "First Talks: " + str(new_value)
 
 func _on_show_prompt(id: int, text: String) -> void:
 	if id == player_id:
