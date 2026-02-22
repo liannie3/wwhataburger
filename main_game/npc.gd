@@ -60,6 +60,8 @@ var pending_evidence: bool = false
 var has_p1_talked: bool = false
 var has_p2_talked: bool = false
 var someone_talked_first: bool = false
+var p1_repeat_evidence_given: bool = false
+var p2_repeat_evidence_given: bool = false
 
 # The Interaction Lock!
 var is_talking: bool = false
@@ -132,7 +134,8 @@ func start_interaction(player: Player):
 		if has_p1_talked:
 			current_dialogues = p1_repeat_dialogues
 			chosen_emotion = p1_repeat_emotion
-			chosen_evidence = p1_repeat_evidence
+			if not p1_repeat_evidence_given:
+				chosen_evidence = p1_repeat_evidence
 		elif someone_talked_first:
 			current_dialogues = p1_cold_dialogues
 			chosen_emotion = p1_cold_emotion
@@ -148,7 +151,8 @@ func start_interaction(player: Player):
 		if has_p2_talked:
 			current_dialogues = p2_repeat_dialogues
 			chosen_emotion = p2_repeat_emotion
-			chosen_evidence = p2_repeat_evidence
+			if not p2_repeat_evidence_given:
+				chosen_evidence = p2_repeat_evidence
 		elif someone_talked_first:
 			current_dialogues = p2_cold_dialogues
 			chosen_emotion = p2_cold_emotion
@@ -187,6 +191,10 @@ func end_interaction():
 	if pending_evidence:
 		GlobalStats.add_evidence(id, 1)
 		pending_evidence = false
+		if id == 1:
+			p1_repeat_evidence_given = true
+		elif id == 2:
+			p2_repeat_evidence_given = true
 
 	is_talking = false
 	EventBus.hide_dialogue.emit(active_player.player_id)

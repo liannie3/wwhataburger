@@ -223,6 +223,22 @@ p2_repeat_emotion = 5
 [node name="Cluzz" parent="." unique_id=1945537862 instance=ExtResource("4_03gfc")]
 position = Vector2(1634, 1558)
 custom_sprite_frames = SubResource("SpriteFrames_b3kdp")
+npc_name = "Cluzz"
+ghost_text = "An old school rival of Erica"
+p1_first_contact_dialogues = Array[String](["Hey, Bill. I heard Erica has been searching for some dirt on you. You should beat him to it.", "I think you can win.", "Don't doubt yourself. Nah you'd win."])
+p1_first_contact_emotion = 6
+p1_first_contact_evidence = true
+p1_cold_dialogues = Array[String](["Heyyyy, Erica recently came and talked to me.", "I honestly feel bad, but I wanted to let you know something to help you win."])
+p1_cold_evidence = true
+p1_repeat_dialogues = Array[String](["Sorry, I don't have anything else.", "You'd win though."])
+p1_repeat_emotion = 5
+p2_first_contact_dialogues = Array[String](["Oh... hello. I heard about the split. Tragic, really.", "I'm sorry, I just can't bear to take sides right now..."])
+p2_first_contact_emotion = 4
+p2_cold_dialogues = Array[String](["Oh, sorry I don't feel like talking to you anymore."])
+p2_cold_emotion = 4
+p2_repeat_dialogues = Array[String](["*sigh*, Look I feel bad, but can't you catch a hint? Here, take this and shoo."])
+p2_repeat_emotion = 4
+p2_repeat_evidence = true
 
 [node name="Justin" parent="." unique_id=583000246 instance=ExtResource("4_03gfc")]
 position = Vector2(2959, 1861)
