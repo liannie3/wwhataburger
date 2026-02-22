@@ -1,19 +1,37 @@
 [gd_scene format=3 uid="uid://bfu4lj43j681i"]
 
-[ext_resource type="Script" uid="uid://dwqlp840cc25n" path="res://main_game/npc.gd" id="1_bhnok"]
-[ext_resource type="Texture2D" uid="uid://cegv6k7a1tptd" path="res://sprites/player/BlooberIdle1.png" id="2_w0qom"]
+[ext_resource type="Script" path="res://main_game/npc.gd" id="1_bhnok"]
+[ext_resource type="Texture2D" uid="uid://5v6tltg18rh3" path="res://sprites/npcs/AdamIdle1.PNG" id="2_1ycq1"]
+[ext_resource type="Texture2D" uid="uid://ds1f8784ldmx" path="res://sprites/npcs/AdamIdle2.PNG" id="3_v1mj6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1ycq1"]
 radius = 88.362885
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_6lush"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_1ycq1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_v1mj6")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.5
+}]
+
 [node name="Npc" type="Area2D" unique_id=364730679]
 script = ExtResource("1_bhnok")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=997920180]
-texture = ExtResource("2_w0qom")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2023502016]
 shape = SubResource("CircleShape2D_1ycq1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=961985671]
+sprite_frames = SubResource("SpriteFrames_6lush")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.13301574
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
