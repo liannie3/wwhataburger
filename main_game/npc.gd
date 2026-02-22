@@ -4,11 +4,49 @@ extends Area2D
 @export var npc_name: String = "Mysterious Stranger"
 @export var ghost_text: String = "Press Interact to Listen"
 
-@export_multiline var first_dialogue: String = "You're the first traveler I've seen in weeks!"
-@export_multiline var second_dialogue: String = "Oh, another one? Your friend was just here."
-@export_multiline var repeat_dialogue: String = "I have nothing more to say to you."
+# State: first_contact, other has talked, keep talking
+@export var p1_first_contact_dialogues: Array[String] = [
+	"Are you seriously dragging me into this?",
+	"I already told you, I don't know who took the good Tupperware!",
+    "Take your marital disputes somewhere else before I call the Homeowners Association!"
+]
+@export var p1_first_contact_emotion: EmotionData.Emotion = EmotionData.Emotion.ANGER
+@export var p1_cold_dialogues: Array[String] = [
+	"Oh, great. The other half of the disaster.",
+	"Your soon-to-be-ex was just here complaining about the shared Netflix password.",
+    "Please, I just want to water my petunias in peace..."
+]
+@export var p1_cold_emotion: EmotionData.Emotion = EmotionData.Emotion.SADNESS
+@export var p1_repeat_dialogues: Array[String] = [
+	"I still don't know who shrunk your favorite sweater in the wash.",
+    "Leave me out of your messy asset division."
+]
+@export var p1_repeat_emotion: EmotionData.Emotion = EmotionData.Emotion.SADNESS
+@export var p2_first_contact_dialogues: Array[String] = [
+	"Oh... hello. I heard about the split. Tragic, really.",
+	"It's just devastating when a couple can't agree on who gets custody of the prized lawn gnome.",
+    "I'm sorry, I just can't bear to take sides right now..."
+]
+@export var p2_first_contact_emotion: EmotionData.Emotion = EmotionData.Emotion.SADNESS
+@export var p2_cold_dialogues: Array[String] = [
+	"I can't believe your partner was just here aggressively demanding the fondue set.",
+	"This whole divorce is tearing our weekly book club apart.",
+    "Just go. My heart can't take any more neighborhood drama."
+]
+@export var p2_cold_emotion: EmotionData.Emotion = EmotionData.Emotion.SADNESS
+@export var p2_repeat_dialogues: Array[String] = [
+	"*sigh* Are you still looking for 'evidence' of the thermostat tampering?",
+    "I have no more domestic secrets to reveal. Shoo."
+]
+@export var p2_repeat_emotion: EmotionData.Emotion = EmotionData.Emotion.SADNESS
+
+
+@export var evidence_chance: float = 1.0  # 0.0–1.0 probability of giving evidence
 # ==========================================
 
+var dialogue_index: int = 0
+var current_dialogues: Array[String] = []
+var pending_emotion: EmotionData.Emotion = EmotionData.Emotion.NONE
 var has_p1_talked: bool = false
 var has_p2_talked: bool = false
 var someone_talked_first: bool = false
@@ -48,7 +86,12 @@ func _input(event: InputEvent) -> void:
 		# 2. TRY TO ADVANCE/CLOSE TEXT
 		# Only the player holding the lock can press the advance button
 		if is_talking and active_player == player and event.is_action_pressed(advance_action):
-			end_interaction()
+			dialogue_index += 1
+
+			if dialogue_index < current_dialogues.size():
+				player.show_dialogue(npc_name, current_dialogues[dialogue_index])
+			else:
+				end_interaction()
 			return
 
 func start_interaction(player: Player):
@@ -59,38 +102,63 @@ func start_interaction(player: Player):
 	for p in players_in_range:
 		p.hide_prompt()
 		
-	var text_to_say = ""
 	var id = player.player_id
+	var chosen_emotion: EmotionData.Emotion = EmotionData.Emotion.NONE
 	
 	# Determine which of the 3 dialogues to use
-	if (id == 1 and has_p1_talked) or (id == 2 and has_p2_talked):
-		text_to_say = repeat_dialogue
-		
-	elif not someone_talked_first:
-		text_to_say = first_dialogue
-		someone_talked_first = true
-		
-		# Update the global stats singleton!
-		if id == 1: 
+	if id == 1:
+		if has_p1_talked:
+			current_dialogues = p1_repeat_dialogues
+			chosen_emotion = p1_repeat_emotion
+		elif someone_talked_first:
+			current_dialogues = p1_cold_dialogues
+			chosen_emotion = p1_cold_emotion
 			has_p1_talked = true
-			GlobalStats.p1_first_talks += 1
-		else: 
+		else:
+			current_dialogues = p1_first_contact_dialogues
+			chosen_emotion = p1_first_contact_emotion
+			has_p1_talked = true
+			someone_talked_first = true
+	elif id == 2:
+		if has_p2_talked:
+			current_dialogues = p2_repeat_dialogues
+			chosen_emotion = p2_repeat_emotion
+		elif someone_talked_first:
+			current_dialogues = p2_cold_dialogues
+			chosen_emotion = p2_cold_emotion
 			has_p2_talked = true
-			GlobalStats.p2_first_talks += 1
-			
-	else:
-		text_to_say = second_dialogue
-		if id == 1: has_p1_talked = true
-		else: has_p2_talked = true
+		else:
+			current_dialogues = p2_first_contact_dialogues
+			chosen_emotion = p2_first_contact_emotion
+			has_p2_talked = true
+			someone_talked_first = true
+
+	dialogue_index = 0
+	pending_emotion = chosen_emotion
+
+	if current_dialogues.is_empty():
+		print("Warning: NPC has no dialogue set for this state!")
+		end_interaction()
+		return
 		
 	# Send the final data to the active player's UI
-	player.show_dialogue(npc_name, text_to_say)
+	player.show_dialogue(npc_name, current_dialogues[dialogue_index])
 
 func end_interaction():
 	# Unlock the NPC
+	if not active_player:
+		return
+
+	var id: int = active_player.player_id
+
+	if pending_emotion != EmotionData.Emotion.NONE:
+		EmotionManager.set_emotion(id, pending_emotion)
+		pending_emotion = EmotionData.Emotion.NONE
+
+	# Maybe give evidence later
+
 	is_talking = false
-	if active_player:
-		active_player.hide_dialogue()
+	active_player.hide_dialogue()
 	active_player = null
 	
 	# If anyone is still standing there waiting, turn their ghost prompt back on!
