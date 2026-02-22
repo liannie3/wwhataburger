@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cr5usn0g1yji0"]
+
+[ext_resource type="Script" uid="uid://cdagq5y111yv1" path="res://main_game/test_emotion.gd" id="1_h3gpv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4k3wj"]
+size = Vector2(40, 40)
+
+[node name="TestEmotion" type="Area2D" unique_id=1897053641]
+script = ExtResource("1_h3gpv")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=916523286]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.5724852, 0.3812654, 0.37620568, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=959477496]
+position = Vector2(20, 20)
+shape = SubResource("RectangleShape2D_4k3wj")

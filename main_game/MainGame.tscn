@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://gbsug7oj0630" path="res://main_game/Arena.tscn" id="2_arena"]
 [ext_resource type="PackedScene" uid="uid://bxfumbre853g0" path="res://main_game/Player.tscn" id="3_p3wb7"]
 [ext_resource type="PackedScene" uid="uid://bfu4lj43j681i" path="res://main_game/NPC.tscn" id="4_03gfc"]
+[ext_resource type="PackedScene" uid="uid://cr5usn0g1yji0" path="res://main_game/TestEmotion.tscn" id="5_w0aw3"]
 
 [node name="MainGame" type="Node2D" unique_id=1780440313]
 script = ExtResource("1_0lykq")
@@ -20,3 +21,6 @@ player_id = 2
 
 [node name="Npc" parent="." unique_id=364730679 instance=ExtResource("4_03gfc")]
 position = Vector2(300, 300)
+
+[node name="TestEmotion" parent="." unique_id=1897053641 instance=ExtResource("5_w0aw3")]
+position = Vector2(500, 300)
