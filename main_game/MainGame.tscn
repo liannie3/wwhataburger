@@ -17,6 +17,14 @@
 [ext_resource type="Texture2D" uid="uid://cb5jmql6ceeh" path="res://sprites/npcs/Kat2.PNG" id="15_74rp2"]
 [ext_resource type="Texture2D" uid="uid://bmo5w7y7tgqyk" path="res://sprites/npcs/Nico1.PNG" id="16_rq74r"]
 [ext_resource type="Texture2D" uid="uid://h8hyoqarhvqo" path="res://sprites/npcs/Nico2.PNG" id="17_gdf83"]
+[ext_resource type="Texture2D" uid="uid://eldifv5fv6hn" path="res://sprites/npcs/AJ1.PNG" id="18_7qmxs"]
+[ext_resource type="Texture2D" uid="uid://bgwd8pbj1l2qx" path="res://sprites/npcs/AJ2.PNG" id="19_74rp2"]
+[ext_resource type="Texture2D" uid="uid://dn34q2o1a3nqg" path="res://sprites/npcs/Harsh1.PNG" id="20_rq74r"]
+[ext_resource type="Texture2D" uid="uid://cy1qfhwqe4kw0" path="res://sprites/npcs/Harsh2.PNG" id="21_gdf83"]
+[ext_resource type="Texture2D" uid="uid://b14tnke5e83gb" path="res://sprites/npcs/Niki1.PNG" id="22_2pwrp"]
+[ext_resource type="Texture2D" uid="uid://bx5hrinqtmmh4" path="res://sprites/npcs/Niki2.PNG" id="23_xrqgx"]
+[ext_resource type="Texture2D" uid="uid://ds6nechg8kp3b" path="res://sprites/npcs/Rita1.PNG" id="24_b3kdp"]
+[ext_resource type="Texture2D" uid="uid://bl88ysjsav56n" path="res://sprites/npcs/Rita2.PNG" id="25_wyxkk"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2pwrp"]
 animations = [{
@@ -102,6 +110,62 @@ animations = [{
 "speed": 2.5
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_f88r1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_7qmxs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_74rp2")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.5
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_eyw1g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_rq74r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_gdf83")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.5
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p772m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("22_2pwrp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_xrqgx")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.5
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_amw20"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("24_b3kdp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_wyxkk")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.5
+}]
+
 [node name="MainGame" type="Node2D" unique_id=1780440313]
 script = ExtResource("1_0lykq")
 
@@ -141,3 +205,19 @@ custom_sprite_frames = SubResource("SpriteFrames_dfupt")
 [node name="Nico" parent="." unique_id=2089880231 instance=ExtResource("4_03gfc")]
 position = Vector2(1340, 311)
 custom_sprite_frames = SubResource("SpriteFrames_d6ead")
+
+[node name="AJ" parent="." unique_id=1812305599 instance=ExtResource("4_03gfc")]
+position = Vector2(2655, 2837)
+custom_sprite_frames = SubResource("SpriteFrames_f88r1")
+
+[node name="Harsh" parent="." unique_id=512550778 instance=ExtResource("4_03gfc")]
+position = Vector2(1775, 2406)
+custom_sprite_frames = SubResource("SpriteFrames_eyw1g")
+
+[node name="Niki" parent="." unique_id=715532282 instance=ExtResource("4_03gfc")]
+position = Vector2(2956, 459)
+custom_sprite_frames = SubResource("SpriteFrames_p772m")
+
+[node name="Rita" parent="." unique_id=1468558610 instance=ExtResource("4_03gfc")]
+position = Vector2(1906, 725)
+custom_sprite_frames = SubResource("SpriteFrames_amw20")
