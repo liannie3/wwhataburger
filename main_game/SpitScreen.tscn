@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cqyhd7rayxr3g" path="res://main_game/spit_screen.gd" id="1_1142w"]
 [ext_resource type="PackedScene" uid="uid://3iselbpvlq0y" path="res://main_game/MainGame.tscn" id="2_f4b40"]
-[ext_resource type="PackedScene" uid="uid://bhk45cagwg42x" path="res://main_game/HUD.tscn" id="3_f4b40"]
+[ext_resource type="PackedScene" path="res://main_game/HUD.tscn" id="3_f4b40"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1142w"]
 bg_color = Color(0.6, 0.6, 0.6, 0)

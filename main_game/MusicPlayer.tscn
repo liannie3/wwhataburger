@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://c5hp1e1plv40f"]
+
+[ext_resource type="AudioStream" uid="uid://kh2qnjr3he7t" path="res://assets/chillenium 2026.mp3" id="1_pjgqb"]
+
+[node name="MusicPlayer" type="AudioStreamPlayer2D" unique_id=1772019749]
+stream = ExtResource("1_pjgqb")
+autoplay = true
