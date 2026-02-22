@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://desacpbaccgqn"]
+
+[ext_resource type="Script" uid="uid://b3av7730myi4d" path="res://main_game/player_ui.gd" id="1_8ux45"]
+
+[node name="PlayerUI" type="CanvasLayer" unique_id=1561490381]
+script = ExtResource("1_8ux45")
+
+[node name="GhostPrompt" type="Label" parent="." unique_id=1523828887]
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -74.5
+offset_top = -52.0
+offset_right = 74.5
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 0.7019608)
+theme_override_font_sizes/font_size = 35
+text = "\"E to Talk\""
+
+[node name="DialogueBox" type="PanelContainer" parent="." unique_id=949819083]
+visible = false
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="DialogueBox" unique_id=947783081]
+layout_mode = 2
+
+[node name="Portrait" type="TextureRect" parent="DialogueBox/HBoxContainer" unique_id=1831822480]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DialogueBox/HBoxContainer" unique_id=1549815049]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="NameLabel" type="Label" parent="DialogueBox/HBoxContainer/VBoxContainer" unique_id=1003972335]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+
+[node name="TextLabel" type="RichTextLabel" parent="DialogueBox/HBoxContainer/VBoxContainer" unique_id=1053237203]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 20
+fit_content = true
+
+[node name="HUD" type="MarginContainer" parent="." unique_id=975345416]
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HUD" unique_id=1907236446]
+layout_mode = 2
+
+[node name="StatsLabel" type="Label" parent="HUD/VBoxContainer" unique_id=1400778715]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "First Talks: 0 "

@@ -18,5 +18,5 @@ func _ready():
 	# 4. THE FIX: Force the right screen to actively look through this camera!
 	p2_cam.make_current()
 
-	var p2_canvas = viewport1.get_node("MainGame/Player2/CanvasLayer")
+	var p2_canvas = viewport1.get_node("MainGame/Player2/PlayerUI")
 	p2_canvas.custom_viewport = viewport2

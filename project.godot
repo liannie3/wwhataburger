@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 GlobalStats="*uid://bofh5l06sx0ts"
 EmotionManager="*uid://gpvx2jjgykfm"
+EventBus="*uid://0bgg63dymgy"
 
 [display]
 

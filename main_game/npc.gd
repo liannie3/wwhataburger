@@ -61,12 +61,13 @@ func _on_body_entered(body: Node2D) -> void:
 		players_in_range.append(body)
 		# Only show the ghost prompt if the NPC isn't currently busy talking to someone else
 		if not is_talking:
-			body.show_prompt(ghost_text)
+			EventBus.show_prompt.emit(body.player_id, ghost_text)
 
 func _on_body_exited(body: Node2D) -> void:
 	if body is Player:
 		players_in_range.erase(body)
-		body.hide_prompt()
+
+		EventBus.hide_prompt.emit(body.player_id)
 		# Safety check: if they walk away mid-sentence, unlock the NPC
 		if is_talking and active_player == body:
 			end_interaction()
@@ -100,7 +101,7 @@ func start_interaction(player: Player):
 	
 	# Turn off ghost prompts for everyone in the circle
 	for p in players_in_range:
-		p.hide_prompt()
+		EventBus.hide_prompt.emit(p.player_id)
 		
 	var id = player.player_id
 	var chosen_emotion: EmotionData.Emotion = EmotionData.Emotion.NONE
@@ -142,7 +143,7 @@ func start_interaction(player: Player):
 		return
 		
 	# Send the final data to the active player's UI
-	player.show_dialogue(npc_name, current_dialogues[dialogue_index])
+	EventBus.show_dialogue.emit(player.player_id, npc_name, current_dialogues[dialogue_index])
 
 func end_interaction():
 	# Unlock the NPC
@@ -158,9 +159,9 @@ func end_interaction():
 	# Maybe give evidence later
 
 	is_talking = false
-	active_player.hide_dialogue()
+	EventBus.hide_dialogue.emit(active_player.player_id)
 	active_player = null
 	
 	# If anyone is still standing there waiting, turn their ghost prompt back on!
 	for p in players_in_range:
-		p.show_prompt(ghost_text)
+		EventBus.show_prompt.emit(p.player_id, ghost_text)

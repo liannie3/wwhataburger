@@ -1,9 +1,8 @@
 extends Node
 
+signal stat_changed(player_id: int, stat_name: String, new_value: int)
 signal evidence_changed(player_id: int, new_amount: int)
 
-var p1_first_talks: int = 0
-var p2_first_talks: int = 0
 var p1_evidence: int = 0
 var p2_evidence: int = 0
 
@@ -14,3 +13,13 @@ func add_evidence(player_id: int, amount: int) -> void:
 	elif player_id == 2:
 		p2_evidence += amount
 		evidence_changed.emit(2, p2_evidence)
+
+var p1_first_talks: int = 0:
+	set(value):
+		p1_first_talks = value
+		stat_changed.emit(1, "first_talks", value)
+
+var p2_first_talks: int = 0:
+	set(value):
+		p2_first_talks = value
+		stat_changed.emit(2, "first_talks", value)

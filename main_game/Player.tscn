@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cegv6k7a1tptd" path="res://sprites/player/BlooberIdle1.png" id="4_ng460"]
 [ext_resource type="Texture2D" uid="uid://u6a7d07oredl" path="res://sprites/player/BlooberIdle2.png" id="5_8hmdd"]
 [ext_resource type="Texture2D" uid="uid://debbhllay4w4e" path="res://sprites/player/AlienWalk2.png" id="5_aol2y"]
+[ext_resource type="PackedScene" uid="uid://desacpbaccgqn" path="res://main_game/PlayerUI.tscn" id="8_aol2y"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ng460"]
 animations = [{
@@ -83,66 +84,4 @@ limit_bottom = 2000
 visibility_layer = 2
 mesh = SubResource("SphereMesh_4a63n")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=362645818]
-
-[node name="GhostPrompt" type="Label" parent="CanvasLayer" unique_id=1008294788]
-visible = false
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -74.5
-offset_top = -52.0
-offset_right = 74.5
-offset_bottom = -10.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_colors/font_color = Color(1, 1, 1, 0.7019608)
-theme_override_font_sizes/font_size = 35
-text = "\"E to Talk\""
-
-[node name="DialogueBox" type="PanelContainer" parent="CanvasLayer" unique_id=1625707787]
-visible = false
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 0
-
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/DialogueBox" unique_id=366553625]
-layout_mode = 2
-
-[node name="Portrait" type="TextureRect" parent="CanvasLayer/DialogueBox/HBoxContainer" unique_id=1130956356]
-layout_mode = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/DialogueBox/HBoxContainer" unique_id=697062008]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="NameLabel" type="Label" parent="CanvasLayer/DialogueBox/HBoxContainer/VBoxContainer" unique_id=1667627300]
-layout_mode = 2
-theme_override_font_sizes/font_size = 35
-
-[node name="TextLabel" type="RichTextLabel" parent="CanvasLayer/DialogueBox/HBoxContainer/VBoxContainer" unique_id=1263959803]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_font_sizes/normal_font_size = 20
-fit_content = true
-
-[node name="HUD" type="MarginContainer" parent="CanvasLayer" unique_id=946929085]
-anchors_preset = 10
-anchor_right = 1.0
-grow_horizontal = 2
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 20
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/HUD" unique_id=630745020]
-layout_mode = 2
-
-[node name="StatsLabel" type="Label" parent="CanvasLayer/HUD/VBoxContainer" unique_id=723857307]
-layout_mode = 2
-theme_override_font_sizes/font_size = 20
-text = "First Talks: 0 "
+[node name="PlayerUI" parent="." unique_id=1561490381 instance=ExtResource("8_aol2y")]
