@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://i658wphwtwt8"]
+
+[ext_resource type="Texture2D" uid="uid://co5dpesr3adyt" path="res://assets/building.png" id="1_bcgve"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kvidj"]
+size = Vector2(653, 463)
+
+[node name="Building" type="StaticBody2D" unique_id=204772846]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2077629954]
+texture = ExtResource("1_bcgve")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=202534680]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("RectangleShape2D_kvidj")

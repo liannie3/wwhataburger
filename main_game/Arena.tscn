@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://gbsug7oj0630"]
 
 [ext_resource type="Texture2D" uid="uid://dm00oaw3as8q5" path="res://assets/background.png" id="1_a5sg1"]
+[ext_resource type="PackedScene" uid="uid://i658wphwtwt8" path="res://main_game/obstacles/Building.tscn" id="2_rnooc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_top"]
 size = Vector2(2038, 20)
@@ -50,3 +51,6 @@ position = Vector2(1162, 324)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WallRight" unique_id=290625879]
 position = Vector2(848, 676)
 shape = SubResource("RectangleShape2D_right")
+
+[node name="Building" parent="." unique_id=204772846 instance=ExtResource("2_rnooc")]
+position = Vector2(936, 951)
