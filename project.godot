@@ -26,6 +26,7 @@ MusicPlayer="*uid://c5hp1e1plv40f"
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
+window/stretch/mode="canvas_items"
 
 [input]
 
@@ -105,3 +106,5 @@ p2_advance={
 [rendering]
 
 rendering_device/driver.windows="d3d12"
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
